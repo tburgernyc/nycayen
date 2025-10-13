@@ -1,0 +1,65 @@
+/* ===================================================================
+   NEOMORPHISM CSS ADDITIONS
+   Add these styles to your app/globals.css file
+   =================================================================== */
+
+/* Add after your existing @tailwind directives */
+
+/* Neomorphic Utility Classes */
+@layer utilities {
+  /* Interactive elevated elements */
+  .neo-elevated-interactive {
+    @apply shadow-neo-elevated transition-all duration-300;
+  }
+  
+  .neo-elevated-interactive:hover {
+    @apply shadow-neo-elevated-hover scale-105;
+  }
+  
+  .neo-elevated-interactive:active {
+    @apply shadow-neo-pressed scale-95;
+  }
+  
+  /* Pressed input style */
+  .neo-pressed-input {
+    @apply shadow-neo-pressed transition-all duration-300;
+  }
+  
+  .neo-pressed-input:focus {
+    @apply shadow-neo-focus;
+  }
+}
+
+/* Smooth animations for all neomorphic elements */
+.neo-transition {
+  transition-property: box-shadow, transform, opacity;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Optional: Scrollbar styling for neomorphic theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D0D0D; /* neo-dark */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C5A46D; /* neo-gold */
+  border-radius: 10px;
+  border: 2px solid #0D0D0D;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D8CFC4; /* neo-champagne */
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #C5A46D #0D0D0D;
+}

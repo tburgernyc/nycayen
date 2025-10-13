@@ -12,7 +12,6 @@ export default function ShopPage() {
   const [loading, setLoading] = useState(true);
   const [cart, setCart] = useState<ShopifyCart | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
-  const [_selectedCategory] = useState("all"); // eslint-disable-line @typescript-eslint/no-unused-vars
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [addingToCart, setAddingToCart] = useState<string | null>(null);
 

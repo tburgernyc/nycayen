@@ -4,10 +4,27 @@ import { sendgridClient } from "@/utils/sendgrid";
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { type, name, email, phone, service, preferredDate, preferredTime, message } = body;
+    const {
+      type,
+      name,
+      email,
+      phone,
+      service,
+      services,
+      preferredDate,
+      preferredTime,
+      message,
+      subject,
+      inquiryType,
+      firstName,
+      lastName
+    } = body;
+
+    // Support both single name and firstName/lastName formats
+    const fullName = name || `${firstName || ''} ${lastName || ''}`.trim();
 
     // Validate required fields
-    if (!name || !email) {
+    if (!fullName || !email) {
       return NextResponse.json(
         { error: "Name and email are required" },
         { status: 400 }
@@ -15,25 +32,25 @@ export async function POST(request: NextRequest) {
     }
 
     const contactData = {
-      name,
+      name: fullName,
       email,
       phone,
-      service,
+      service: service || (services && services.join(', ')),
       preferredDate,
       preferredTime,
-      message,
+      message: message || `${subject || 'Contact form submission'}\n\n${message || ''}`,
     };
 
     let response;
-    
-    if (type === "booking") {
+
+    if (type === "booking" || inquiryType === "booking") {
       // Send booking confirmation to client and notification to business
       const [clientResponse, businessResponse] = await Promise.all([
         sendgridClient.sendBookingConfirmation(contactData),
         sendgridClient.sendContactForm(contactData),
       ]);
 
-      response = clientResponse.success && businessResponse.success 
+      response = clientResponse.success && businessResponse.success
         ? { success: true, message: "Booking request submitted successfully" }
         : { success: false, message: "Failed to send booking confirmation" };
     } else {

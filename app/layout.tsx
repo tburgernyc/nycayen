@@ -64,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${playfair.variable} ${poppins.variable} min-h-screen bg-dark text-accent font-poppins antialiased`}
+        className={`${playfair.variable} ${poppins.variable} min-h-screen bg-neo-dark text-neo-tan font-poppins antialiased`}
       >
         <Navbar />
         <main className="flex-1">

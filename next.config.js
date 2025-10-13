@@ -21,11 +21,17 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+    formats: ['image/avif', 'image/webp'],
+    minimumCacheTTL: 60,
   },
-  experimental: {
-    // Removed optimizeCss to fix build issues
-  },
+  // Optimize for Vercel deployment
+  poweredByHeader: false,
+  compress: true,
+  generateEtags: true,
+  // Server configuration
   serverExternalPackages: ['@sendgrid/mail'],
+  // Output configuration for Vercel
+  output: 'standalone',
 };
 
 module.exports = nextConfig;

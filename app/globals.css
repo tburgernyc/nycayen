@@ -4,25 +4,26 @@
 
 @layer base {
   :root {
-    --background: 24 20 22; /* #181516 */
-    --foreground: 251 246 232; /* #FFF6E8 */
-    --card: 24 20 22;
-    --card-foreground: 251 246 232;
-    --popover: 24 20 22;
-    --popover-foreground: 251 246 232;
-    --primary: 191 166 129; /* #BFA681 */
-    --primary-foreground: 24 20 22;
-    --secondary: 92 80 72; /* #5C5048 */
-    --secondary-foreground: 251 246 232;
-    --muted: 39 35 37;
-    --muted-foreground: 161 161 170;
-    --accent: 251 246 232; /* #FFF6E8 */
-    --accent-foreground: 24 20 22;
+    /* Neomorphism Color System - Nycayen Brand */
+    --background: 13 13 13; /* #0D0D0D - Neo dark */
+    --foreground: 216 207 196; /* #D8CFC4 - Neo champagne */
+    --card: 59 59 59; /* #3B3B3B - Neo steel */
+    --card-foreground: 216 207 196;
+    --popover: 59 59 59;
+    --popover-foreground: 216 207 196;
+    --primary: 197 164 109; /* #C5A46D - Neo gold */
+    --primary-foreground: 13 13 13;
+    --secondary: 59 59 59; /* #3B3B3B - Neo steel */
+    --secondary-foreground: 216 207 196;
+    --muted: 166 159 151; /* #A69F97 - Neo taupe */
+    --muted-foreground: 216 207 196;
+    --accent: 197 164 109; /* #C5A46D - Neo gold */
+    --accent-foreground: 13 13 13;
     --destructive: 239 68 68;
     --destructive-foreground: 248 250 252;
-    --border: 39 35 37;
-    --input: 39 35 37;
-    --ring: 191 166 129;
+    --border: 166 159 151;
+    --input: 166 159 151;
+    --ring: 197 164 109;
     --radius: 0.5rem;
   }
 
@@ -39,24 +40,55 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Neomorphic Interactive Elements */
+  .neo-elevated-interactive {
+    @apply shadow-neo-elevated transition-all duration-300;
+  }
+
+  .neo-elevated-interactive:hover {
+    @apply shadow-neo-elevated-hover scale-105;
+  }
+
+  .neo-elevated-interactive:active {
+    @apply shadow-neo-pressed scale-95;
+  }
+
+  /* Pressed Input Style */
+  .neo-pressed-input {
+    @apply shadow-neo-pressed transition-all duration-300;
+  }
+
+  .neo-pressed-input:focus {
+    @apply shadow-neo-focus;
+  }
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Neomorphism theme */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #181516;
+  background: #0D0D0D; /* neo-dark */
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #BFA681;
-  border-radius: 4px;
+  background: #C5A46D; /* neo-gold */
+  border-radius: 10px;
+  border: 2px solid #0D0D0D;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a89371;
+  background: #D8CFC4; /* neo-champagne */
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #C5A46D #0D0D0D;
 }
 
 /* Smooth scrolling */
@@ -115,35 +147,54 @@ html {
   animation: slideInRight 0.6s ease-out;
 }
 
-/* Gradient text */
+/* Gradient text - Neomorphism */
 .gradient-text {
-  background: linear-gradient(135deg, #BFA681 0%, #FFF6E8 100%);
+  background: linear-gradient(135deg, #C5A46D 0%, #D8CFC4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Custom button styles */
+/* Smooth animations for all neomorphic elements */
+.neo-transition {
+  transition-property: box-shadow, transform, opacity;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Neomorphism button styles */
 .btn-primary {
-  @apply bg-primary text-primary-foreground hover:bg-primary/90 font-medium px-6 py-3 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl;
+  @apply bg-neo-steel text-neo-gold hover:text-neo-champagne font-medium px-6 py-3 rounded-neo-md transition-all duration-300 shadow-neo-elevated hover:shadow-neo-elevated-hover;
 }
 
 .btn-secondary {
-  @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 font-medium px-6 py-3 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl;
+  @apply bg-neo-steel text-neo-champagne hover:text-neo-gold font-medium px-6 py-3 rounded-neo-md transition-all duration-300 shadow-neo-flat hover:shadow-neo-elevated;
 }
 
 .btn-outline {
-  @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-medium px-6 py-3 rounded-xl transition-all duration-200;
+  @apply border-2 border-neo-gold text-neo-gold hover:shadow-neo-flat font-medium px-6 py-3 rounded-neo-md transition-all duration-300;
 }
 
-/* Hero section background */
+.btn-pressed {
+  @apply bg-neo-dark text-neo-gold font-medium px-6 py-3 rounded-neo-md shadow-neo-pressed;
+}
+
+/* Hero section background - Dark neomorphism */
 .hero-bg {
-  background: linear-gradient(135deg, #181516 0%, #2a2227 50%, #181516 100%);
+  background: linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 50%, #0D0D0D 100%);
 }
 
-/* Card styles */
+/* Neomorphism card styles */
 .card {
-  @apply bg-card text-card-foreground rounded-xl shadow-xl border border-border;
+  @apply bg-neo-steel text-neo-champagne rounded-neo-lg shadow-neo-elevated border border-neo-taupe/20;
+}
+
+.card-flat {
+  @apply bg-neo-steel text-neo-champagne rounded-neo-lg shadow-neo-flat border border-neo-taupe/20;
+}
+
+.card-pressed {
+  @apply bg-neo-dark text-neo-champagne rounded-neo-lg shadow-neo-pressed border border-neo-taupe/20;
 }
 
 /* Instagram embed responsive */

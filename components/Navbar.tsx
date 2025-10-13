@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Phone, Calendar } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { NeoButton } from "./ui/NeoButton";
+import { NeoIconButton } from "./ui/NeoIconButton";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +41,7 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-dark/95 backdrop-blur-md shadow-xl border-b border-primary/20"
+          ? "bg-neo-dark/95 backdrop-blur-md shadow-neo-elevated border-b border-neo-taupe/20"
           : "bg-transparent"
       }`}
     >
@@ -48,7 +50,7 @@ export function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center space-x-2 text-2xl font-playfair font-bold text-primary hover:text-primary/80 transition-colors"
+            className="flex items-center space-x-2 text-2xl font-playfair font-bold text-neo-gold hover:text-neo-champagne transition-colors"
           >
             <span>Nycayen</span>
           </Link>
@@ -59,17 +61,17 @@ export function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-primary relative ${
+                className={`text-sm font-medium transition-colors hover:text-neo-gold relative ${
                   isActive(item.href)
-                    ? "text-primary"
-                    : "text-accent hover:text-primary"
+                    ? "text-neo-gold"
+                    : "text-neo-champagne hover:text-neo-gold"
                 }`}
               >
                 {item.name}
                 {isActive(item.href) && (
                   <motion.div
                     layoutId="navbar-indicator"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-neo-gold rounded-full shadow-[0_0_8px_rgba(197,164,109,0.6)]"
                     initial={false}
                   />
                 )}
@@ -81,28 +83,26 @@ export function Navbar() {
           <div className="hidden lg:flex items-center space-x-4">
             <Link
               href="tel:+1-555-123-4567"
-              className="flex items-center space-x-2 text-accent hover:text-primary transition-colors"
+              className="flex items-center space-x-2 text-neo-champagne hover:text-neo-gold transition-colors"
             >
               <Phone className="w-4 h-4" />
               <span className="text-sm font-medium">Call Now</span>
             </Link>
-            <Link
-              href="/booking"
-              className="btn-primary flex items-center space-x-2"
-            >
-              <Calendar className="w-4 h-4" />
-              <span>Book Now</span>
+            <Link href="/booking">
+              <NeoButton variant="gold" icon={<Calendar className="w-4 h-4" />}>
+                Book Now
+              </NeoButton>
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
+          <NeoIconButton
+            icon={isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-accent hover:text-primary transition-colors"
+            variant="elevated"
+            className="lg:hidden"
             aria-label="Toggle menu"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          />
         </div>
       </div>
 
@@ -114,7 +114,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-dark/95 backdrop-blur-md border-t border-primary/20"
+            className="lg:hidden bg-neo-dark/95 backdrop-blur-md border-t border-neo-taupe/20 shadow-neo-elevated"
           >
             <div className="container mx-auto px-4 py-6">
               <div className="flex flex-col space-y-4">
@@ -125,30 +125,31 @@ export function Navbar() {
                     onClick={() => setIsOpen(false)}
                     className={`text-lg font-medium transition-colors py-2 ${
                       isActive(item.href)
-                        ? "text-primary border-l-2 border-primary pl-4"
-                        : "text-accent hover:text-primary hover:pl-4"
+                        ? "text-neo-gold border-l-2 border-neo-gold pl-4"
+                        : "text-neo-champagne hover:text-neo-gold hover:pl-4"
                     }`}
                   >
                     {item.name}
                   </Link>
                 ))}
-                
-                <div className="pt-4 mt-4 border-t border-primary/20 space-y-3">
+
+                <div className="pt-4 mt-4 border-t border-neo-taupe/20 space-y-3">
                   <Link
                     href="tel:+1-555-123-4567"
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center space-x-3 text-accent hover:text-primary transition-colors py-2"
+                    className="flex items-center space-x-3 text-neo-champagne hover:text-neo-gold transition-colors py-2"
                   >
                     <Phone className="w-5 h-5" />
                     <span className="text-lg font-medium">Call Now</span>
                   </Link>
-                  <Link
-                    href="/booking"
-                    onClick={() => setIsOpen(false)}
-                    className="btn-primary w-full flex items-center justify-center space-x-2"
-                  >
-                    <Calendar className="w-5 h-5" />
-                    <span>Book Appointment</span>
+                  <Link href="/booking" onClick={() => setIsOpen(false)}>
+                    <NeoButton
+                      variant="gold"
+                      fullWidth
+                      icon={<Calendar className="w-5 h-5" />}
+                    >
+                      Book Appointment
+                    </NeoButton>
                   </Link>
                 </div>
               </div>

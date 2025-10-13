@@ -1,0 +1,25 @@
+{
+  "name": "neomorphism-dependencies",
+  "description": "Required dependencies for Nycayen Neomorphism Design System",
+  "instructions": "Run: npm install class-variance-authority clsx tailwind-merge",
+  "dependencies": {
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
+    "tailwind-merge": "^2.2.0",
+    "framer-motion": "^11.14.4",
+    "lucide-react": "^0.462.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.7.2"
+  },
+  "notes": {
+    "framer-motion": "Should already be installed (v11.14.4)",
+    "lucide-react": "Should already be installed (v0.462.0)",
+    "new_packages": [
+      "class-variance-authority - For component variants",
+      "clsx - For conditional classnames",
+      "tailwind-merge - For merging Tailwind classes"
+    ]
+  }
+}

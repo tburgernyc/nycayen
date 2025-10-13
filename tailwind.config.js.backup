@@ -1,0 +1,103 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: ["class"],
+  content: [
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+  ],
+  theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
+    extend: {
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        // Neomorphism Color Palette
+        neo: {
+          dark: "#21221F",    // Primary background
+          cyan: "#72BDC2",    // Primary accent
+          blue: "#388B9E",    // Secondary accent
+          gray: "#5C7572",    // Neutral
+          tan: "#988C7F",     // Text/Warm accent
+        },
+        primary: {
+          DEFAULT: "#72BDC2", // Neo cyan
+          foreground: "#21221F",
+        },
+        secondary: {
+          DEFAULT: "#388B9E", // Neo blue
+          foreground: "#988C7F",
+        },
+        accent: {
+          DEFAULT: "#72BDC2", // Neo cyan
+          foreground: "#21221F",
+        },
+        dark: "#21221F", // Neo dark background
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+      },
+      fontFamily: {
+        playfair: ['Playfair Display', 'serif'],
+        poppins: ['Poppins', 'sans-serif'],
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+        xl: "1.25rem",
+        // Neomorphism border radius
+        'neo-sm': '12px',
+        'neo-md': '16px',
+        'neo-lg': '20px',
+        'neo-xl': '24px',
+      },
+      boxShadow: {
+        xl: "0 4px 32px 0 rgba(0,0,0,0.18)",
+        // Neomorphism shadows
+        'neo-elevated': '8px 8px 16px rgba(33, 34, 31, 0.7), -8px -8px 16px rgba(255, 255, 255, 0.05)',
+        'neo-pressed': 'inset 8px 8px 16px rgba(0, 0, 0, 0.3), inset -8px -8px 16px rgba(255, 255, 255, 0.05)',
+        'neo-flat': '4px 4px 8px rgba(33, 34, 31, 0.7), -4px -4px 8px rgba(255, 255, 255, 0.05)',
+        'neo-hover': '12px 12px 24px rgba(33, 34, 31, 0.8), -12px -12px 24px rgba(255, 255, 255, 0.06)',
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
+    },
+  },
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
+  ],
+};

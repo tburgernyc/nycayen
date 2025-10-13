@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Filter, Grid, List, Search, Eye, Heart, Share2, Calendar } from "lucide-react";
+import { SlidersHorizontal as Filter, Grid, List, Search, Eye, Heart, Share2, Calendar } from "lucide-react";
 
 interface PortfolioItem {
   id: string;

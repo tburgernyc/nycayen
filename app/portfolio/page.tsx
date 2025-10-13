@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, Filter, X, ChevronLeft, ChevronRight, Star, Calendar, User, Heart, Grid, Layout } from "lucide-react";
+import { Search, SlidersHorizontal as Filter, X, ChevronLeft, ChevronRight, Star, Calendar, User, Heart, Grid, Layout } from "lucide-react";
 import Image from "next/image";
 
 interface PortfolioItem {

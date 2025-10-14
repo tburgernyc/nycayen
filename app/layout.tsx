@@ -25,26 +25,26 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Nycayen | The Art of Hair - Empower Through Beauty",
-    template: "%s | Nycayen",
+    default: "Nycayen Moore | Expert Hair Styling Services for Men and Women",
+    template: "%s | Nycayen Moore",
   },
-  description: "Empower Through Beauty—Boosting Confidence via Personalized Hair Styling. Transforming lives by enhancing natural beauty and building confidence through the art of hair.",
-  keywords: ["hair styling", "beauty", "confidence", "personalized", "salon", "hair transformation"],
-  authors: [{ name: "Nycayen" }],
-  creator: "Nycayen",
+  description: "Get the perfect look with our expert hair styling services anywhere in the US. Nycayen Moore specializes in men's grooming, bridal hair styling, and personalized hair styling for any occasion.",
+  keywords: ["hair styling", "expert hair stylist", "men's grooming", "bridal hair", "wedding hair", "personalized styling", "NY hair salon", "professional hairstylist"],
+  authors: [{ name: "Nycayen Moore" }],
+  creator: "Nycayen Moore",
   metadataBase: new URL("https://nycayen.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://nycayen.com",
-    title: "Nycayen | The Art of Hair - Empower Through Beauty",
-    description: "Empower Through Beauty—Boosting Confidence via Personalized Hair Styling",
-    siteName: "Nycayen",
+    title: "Nycayen Moore | Expert Hair Styling Services for Men and Women",
+    description: "Get the perfect look with our expert hair styling services anywhere in the US",
+    siteName: "Nycayen Moore",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nycayen | The Art of Hair - Empower Through Beauty",
-    description: "Empower Through Beauty—Boosting Confidence via Personalized Hair Styling",
+    title: "Nycayen Moore | Expert Hair Styling Services for Men and Women",
+    description: "Get the perfect look with our expert hair styling services anywhere in the US",
     creator: "@nycayenmoore",
   },
   robots: {

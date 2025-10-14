@@ -80,19 +80,16 @@ export function HeroSection() {
               variants={itemVariants}
               className="text-4xl md:text-5xl lg:text-6xl font-cormorant font-bold mb-6 leading-tight"
             >
-              <span className="text-accent">Empower Through</span>
+              <span className="gradient-text">Expert Hair Styling Services</span>
               <br />
-              <span className="gradient-text">Beauty</span>
+              <span className="text-accent">for Men and Women</span>
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
               className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0"
             >
-              Boosting Confidence via Personalized Hair Styling. 
-              <span className="text-primary font-medium block mt-2">
-                The Art of Hair
-              </span>
+              Get the perfect look with our expert hair styling services anywhere in the US
             </motion.p>
 
             <motion.div
@@ -104,7 +101,7 @@ export function HeroSection() {
                 className="btn-primary flex items-center justify-center space-x-2 text-lg px-8 py-4"
               >
                 <Calendar className="w-5 h-5" />
-                <span>Book Your Transformation</span>
+                <span>Schedule Your Appointment</span>
               </Link>
               <Link
                 href="/portfolio"

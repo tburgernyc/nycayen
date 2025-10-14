@@ -9,7 +9,7 @@ import { cn } from '@/utils/cn';
  * Select variants
  */
 const neoSelectVariants = cva(
-  "w-full font-poppins transition-all duration-300 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed appearance-none cursor-pointer",
+  "w-full font-inter transition-all duration-300 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed appearance-none cursor-pointer",
   {
     variants: {
       variant: {
@@ -79,7 +79,7 @@ export const NeoSelect = forwardRef<HTMLSelectElement, NeoSelectProps>(
         {label && (
           <label
             htmlFor={selectId}
-            className="block text-sm font-medium text-neo-champagne font-poppins"
+            className="block text-sm font-medium text-neo-champagne font-inter"
           >
             {label}
             {required && <span className="text-neo-gold ml-1" aria-label="required">*</span>}
@@ -128,7 +128,7 @@ export const NeoSelect = forwardRef<HTMLSelectElement, NeoSelectProps>(
         {error && (
           <p
             id={`${selectId}-error`}
-            className="text-sm text-red-400 font-poppins"
+            className="text-sm text-red-400 font-inter"
             role="alert"
           >
             {error}
@@ -139,7 +139,7 @@ export const NeoSelect = forwardRef<HTMLSelectElement, NeoSelectProps>(
         {!error && helperText && (
           <p
             id={`${selectId}-helper`}
-            className="text-sm text-neo-taupe font-poppins"
+            className="text-sm text-neo-taupe font-inter"
           >
             {helperText}
           </p>

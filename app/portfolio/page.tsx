@@ -230,7 +230,7 @@ export default function PortfolioPage() {
           >
             <motion.h1 
               variants={itemVariants}
-              className="text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-primary mb-6"
+              className="text-5xl md:text-6xl lg:text-7xl font-cormorant font-bold text-primary mb-6"
             >
               Our Portfolio
             </motion.h1>
@@ -371,7 +371,7 @@ export default function PortfolioPage() {
                 </div>
                 
                 <div className="p-4">
-                  <h3 className="font-playfair font-bold text-primary mb-2">
+                  <h3 className="font-cormorant font-bold text-primary mb-2">
                     {item.title}
                   </h3>
                   <p className="text-sm text-muted-foreground mb-3 line-clamp-2">
@@ -401,7 +401,7 @@ export default function PortfolioPage() {
               className="text-center py-20"
             >
               <Filter className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-              <h3 className="text-xl font-playfair font-bold text-primary mb-2">
+              <h3 className="text-xl font-cormorant font-bold text-primary mb-2">
                 No Results Found
               </h3>
               <p className="text-muted-foreground">
@@ -431,7 +431,7 @@ export default function PortfolioPage() {
             >
               <div className="p-6">
                 <div className="flex items-center justify-between mb-6">
-                  <h2 className="text-2xl font-playfair font-bold text-primary">
+                  <h2 className="text-2xl font-cormorant font-bold text-primary">
                     {selectedItem.title}
                   </h2>
                   <button
@@ -477,17 +477,17 @@ export default function PortfolioPage() {
 
                   <div className="space-y-6">
                     <div>
-                      <h3 className="font-playfair font-bold text-primary mb-2">Service</h3>
+                      <h3 className="font-cormorant font-bold text-primary mb-2">Service</h3>
                       <p className="text-muted-foreground">{selectedItem.service}</p>
                     </div>
 
                     <div>
-                      <h3 className="font-playfair font-bold text-primary mb-2">Description</h3>
+                      <h3 className="font-cormorant font-bold text-primary mb-2">Description</h3>
                       <p className="text-muted-foreground leading-relaxed">{selectedItem.description}</p>
                     </div>
 
                     <div>
-                      <h3 className="font-playfair font-bold text-primary mb-2">Client Rating</h3>
+                      <h3 className="font-cormorant font-bold text-primary mb-2">Client Rating</h3>
                       <div className="flex items-center gap-2">
                         {[...Array(5)].map((_, i) => (
                           <Star
@@ -501,7 +501,7 @@ export default function PortfolioPage() {
 
                     {selectedItem.testimonial && (
                       <div>
-                        <h3 className="font-playfair font-bold text-primary mb-2">Client Testimonial</h3>
+                        <h3 className="font-cormorant font-bold text-primary mb-2">Client Testimonial</h3>
                         <blockquote className="italic text-muted-foreground border-l-4 border-primary pl-4">
                           &ldquo;{selectedItem.testimonial}&rdquo;
                         </blockquote>
@@ -510,7 +510,7 @@ export default function PortfolioPage() {
                     )}
 
                     <div>
-                      <h3 className="font-playfair font-bold text-primary mb-2">Tags</h3>
+                      <h3 className="font-cormorant font-bold text-primary mb-2">Tags</h3>
                       <div className="flex flex-wrap gap-2">
                         {selectedItem.tags.map((tag) => (
                           <span
@@ -542,7 +542,7 @@ export default function PortfolioPage() {
           >
             <motion.h2 
               variants={itemVariants}
-              className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6"
+              className="text-4xl md:text-5xl font-cormorant font-bold text-primary mb-6"
             >
               Ready for Your Transformation?
             </motion.h2>

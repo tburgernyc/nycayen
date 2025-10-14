@@ -288,7 +288,7 @@ export default function PrivacyPolicyPage() {
             </motion.div>
             <motion.h1 
               variants={itemVariants}
-              className="text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-primary mb-6"
+              className="text-5xl md:text-6xl lg:text-7xl font-cormorant font-bold text-primary mb-6"
             >
               Privacy Policy
             </motion.h1>
@@ -326,7 +326,7 @@ export default function PrivacyPolicyPage() {
               variants={itemVariants}
               className="bg-card border border-border rounded-lg p-8 mb-12"
             >
-              <h2 className="text-2xl font-playfair font-bold text-primary mb-6">
+              <h2 className="text-2xl font-cormorant font-bold text-primary mb-6">
                 Overview
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -368,7 +368,7 @@ export default function PrivacyPolicyPage() {
                     <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
                       <section.icon className="w-6 h-6 text-primary" />
                     </div>
-                    <h2 className="text-2xl font-playfair font-bold text-primary">
+                    <h2 className="text-2xl font-cormorant font-bold text-primary">
                       {section.title}
                     </h2>
                   </div>
@@ -412,7 +412,7 @@ export default function PrivacyPolicyPage() {
           >
             <motion.h2 
               variants={itemVariants}
-              className="text-3xl font-playfair font-bold text-primary mb-8 text-center"
+              className="text-3xl font-cormorant font-bold text-primary mb-8 text-center"
             >
               Quick Links
             </motion.h2>
@@ -422,7 +422,7 @@ export default function PrivacyPolicyPage() {
                 <div className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-colors">
                   <div className="flex items-center gap-4 mb-4">
                     <Mail className="w-8 h-8 text-primary" />
-                    <h3 className="text-xl font-playfair font-bold text-primary">
+                    <h3 className="text-xl font-cormorant font-bold text-primary">
                       Data Request
                     </h3>
                   </div>
@@ -442,7 +442,7 @@ export default function PrivacyPolicyPage() {
                 <div className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-colors">
                   <div className="flex items-center gap-4 mb-4">
                     <Cookie className="w-8 h-8 text-primary" />
-                    <h3 className="text-xl font-playfair font-bold text-primary">
+                    <h3 className="text-xl font-cormorant font-bold text-primary">
                       Cookie Settings
                     </h3>
                   </div>
@@ -465,7 +465,7 @@ export default function PrivacyPolicyPage() {
                 <div className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-colors">
                   <div className="flex items-center gap-4 mb-4">
                     <FileText className="w-8 h-8 text-primary" />
-                    <h3 className="text-xl font-playfair font-bold text-primary">
+                    <h3 className="text-xl font-cormorant font-bold text-primary">
                       Terms of Service
                     </h3>
                   </div>
@@ -485,7 +485,7 @@ export default function PrivacyPolicyPage() {
                 <div className="bg-card border border-border rounded-lg p-6 hover:border-primary/50 transition-colors">
                   <div className="flex items-center gap-4 mb-4">
                     <Phone className="w-8 h-8 text-primary" />
-                    <h3 className="text-xl font-playfair font-bold text-primary">
+                    <h3 className="text-xl font-cormorant font-bold text-primary">
                       Contact Support
                     </h3>
                   </div>
@@ -520,7 +520,7 @@ export default function PrivacyPolicyPage() {
               className="bg-primary/10 border border-primary/20 rounded-lg p-8"
             >
               <Shield className="w-16 h-16 text-primary mx-auto mb-6" />
-              <h2 className="text-3xl font-playfair font-bold text-primary mb-4">
+              <h2 className="text-3xl font-cormorant font-bold text-primary mb-4">
                 Your Privacy Matters
               </h2>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">

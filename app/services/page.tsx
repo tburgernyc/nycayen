@@ -192,7 +192,7 @@ export default function ServicesPage() {
           >
             <motion.h1 
               variants={itemVariants}
-              className="text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-primary mb-6"
+              className="text-5xl md:text-6xl lg:text-7xl font-cormorant font-bold text-primary mb-6"
             >
               Our Services
             </motion.h1>
@@ -265,7 +265,7 @@ export default function ServicesPage() {
                     )}
                   </div>
                   
-                  <h3 className="text-xl font-playfair font-bold text-primary mb-2">
+                  <h3 className="text-xl font-cormorant font-bold text-primary mb-2">
                     {service.name}
                   </h3>
                   
@@ -323,7 +323,7 @@ export default function ServicesPage() {
           >
             <motion.h2 
               variants={itemVariants}
-              className="text-3xl md:text-4xl font-playfair font-bold text-primary mb-8 text-center"
+              className="text-3xl md:text-4xl font-cormorant font-bold text-primary mb-8 text-center"
             >
               Why Choose Our Services?
             </motion.h2>
@@ -333,7 +333,7 @@ export default function ServicesPage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Star className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-playfair font-bold text-primary mb-2">Expert Stylists</h3>
+                <h3 className="font-cormorant font-bold text-primary mb-2">Expert Stylists</h3>
                 <p className="text-muted-foreground">
                   Our certified professionals stay updated with the latest trends and techniques
                 </p>
@@ -343,7 +343,7 @@ export default function ServicesPage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Heart className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-playfair font-bold text-primary mb-2">Personalized Care</h3>
+                <h3 className="font-cormorant font-bold text-primary mb-2">Personalized Care</h3>
                 <p className="text-muted-foreground">
                   Every service is tailored to your unique hair type, lifestyle, and preferences
                 </p>
@@ -353,7 +353,7 @@ export default function ServicesPage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Sparkles className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-playfair font-bold text-primary mb-2">Premium Products</h3>
+                <h3 className="font-cormorant font-bold text-primary mb-2">Premium Products</h3>
                 <p className="text-muted-foreground">
                   We use only the finest hair care products for optimal results and hair health
                 </p>
@@ -375,7 +375,7 @@ export default function ServicesPage() {
           >
             <motion.h2 
               variants={itemVariants}
-              className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6"
+              className="text-4xl md:text-5xl font-cormorant font-bold text-primary mb-6"
             >
               Ready to Transform Your Hair?
             </motion.h2>

@@ -110,7 +110,7 @@ export const NeoCTAButton = forwardRef<HTMLButtonElement, NeoCTAButtonProps>(
         ref={ref}
         className={cn(
           // Base styles
-          "inline-flex items-center justify-center font-semibold font-poppins",
+          "inline-flex items-center justify-center font-semibold font-inter",
           "bg-neo-gold text-neo-dark",
           "shadow-neo-high hover:shadow-neo-elevated-hover",
           "transition-all duration-300",

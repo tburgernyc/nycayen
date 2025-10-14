@@ -10,7 +10,7 @@ import { cn } from '@/utils/cn';
  * Search Input variants
  */
 const neoSearchInputVariants = cva(
-  "w-full font-poppins transition-all duration-300 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed placeholder:text-neo-taupe/50",
+  "w-full font-inter transition-all duration-300 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed placeholder:text-neo-taupe/50",
   {
     variants: {
       variant: {

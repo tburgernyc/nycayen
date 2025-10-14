@@ -108,7 +108,7 @@ export default function ShopPage() {
           >
             <motion.h1 
               variants={itemVariants}
-              className="text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-primary mb-6"
+              className="text-5xl md:text-6xl lg:text-7xl font-cormorant font-bold text-primary mb-6"
             >
               Our Shop
             </motion.h1>
@@ -174,7 +174,7 @@ export default function ShopPage() {
             <div className="max-w-4xl mx-auto text-center">
               <div className="bg-card border border-border rounded-lg p-6">
                 <ShoppingBag className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-playfair font-bold text-primary mb-2">
+                <h3 className="text-xl font-cormorant font-bold text-primary mb-2">
                   Demo Mode
                 </h3>
                 <p className="text-muted-foreground">
@@ -231,7 +231,7 @@ export default function ShopPage() {
                   </div>
                   
                   <div className="p-4">
-                    <h3 className="font-playfair font-bold text-primary mb-2 line-clamp-1">
+                    <h3 className="font-cormorant font-bold text-primary mb-2 line-clamp-1">
                       {product.title}
                     </h3>
                     <p className="text-sm text-muted-foreground mb-3 line-clamp-2">
@@ -286,7 +286,7 @@ export default function ShopPage() {
               className="text-center py-20"
             >
               <ShoppingBag className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-              <h3 className="text-xl font-playfair font-bold text-primary mb-2">
+              <h3 className="text-xl font-cormorant font-bold text-primary mb-2">
                 No Products Found
               </h3>
               <p className="text-muted-foreground">
@@ -308,7 +308,7 @@ export default function ShopPage() {
           >
             <div className="p-6">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-playfair font-bold text-primary">
+                <h2 className="text-xl font-cormorant font-bold text-primary">
                   Shopping Cart
                 </h2>
                 <button
@@ -394,7 +394,7 @@ export default function ShopPage() {
           >
             <motion.h2 
               variants={itemVariants}
-              className="text-3xl md:text-4xl font-playfair font-bold text-primary mb-12 text-center"
+              className="text-3xl md:text-4xl font-cormorant font-bold text-primary mb-12 text-center"
             >
               Why Shop With Us?
             </motion.h2>
@@ -404,7 +404,7 @@ export default function ShopPage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Star className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-playfair font-bold text-primary mb-2">Premium Quality</h3>
+                <h3 className="font-cormorant font-bold text-primary mb-2">Premium Quality</h3>
                 <p className="text-muted-foreground">
                   Only the finest hair care products from trusted brands
                 </p>
@@ -414,7 +414,7 @@ export default function ShopPage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Heart className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-playfair font-bold text-primary mb-2">Expert Curated</h3>
+                <h3 className="font-cormorant font-bold text-primary mb-2">Expert Curated</h3>
                 <p className="text-muted-foreground">
                   Products personally selected by our professional stylists
                 </p>
@@ -424,7 +424,7 @@ export default function ShopPage() {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <ShoppingBag className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="font-playfair font-bold text-primary mb-2">Fast Shipping</h3>
+                <h3 className="font-cormorant font-bold text-primary mb-2">Fast Shipping</h3>
                 <p className="text-muted-foreground">
                   Quick and secure delivery to your doorstep
                 </p>

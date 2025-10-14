@@ -212,7 +212,7 @@ export function InstagramCarousel() {
                       <Instagram className="w-6 h-6 text-neo-gold" />
                     </div>
                     <div>
-                      <h3 className="font-playfair font-semibold text-neo-champagne">@nycayenmoore</h3>
+                      <h3 className="font-cormorant font-semibold text-neo-champagne">@nycayenmoore</h3>
                       <p className="text-sm text-neo-taupe">Nycayen Hair Salon</p>
                     </div>
                   </div>

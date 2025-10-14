@@ -78,7 +78,7 @@ export function HeroSection() {
 
             <motion.h1
               variants={itemVariants}
-              className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold mb-6 leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-cormorant font-bold mb-6 leading-tight"
             >
               <span className="text-accent">Empower Through</span>
               <br />

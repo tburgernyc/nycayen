@@ -140,12 +140,12 @@ export function Testimonials() {
                 {/* Client Avatar & Info */}
                 <div className="text-center md:text-left">
                   <div className="w-24 h-24 bg-neo-dark shadow-neo-pressed rounded-full mx-auto md:mx-0 mb-4 flex items-center justify-center border-2 border-neo-gold/20">
-                    <span className="text-2xl font-playfair font-bold text-neo-gold">
+                    <span className="text-2xl font-cormorant font-bold text-neo-gold">
                       {testimonials[currentIndex].name.split(' ').map(n => n[0]).join('')}
                     </span>
                   </div>
 
-                  <h4 className="text-xl font-playfair font-semibold text-neo-champagne mb-1">
+                  <h4 className="text-xl font-cormorant font-semibold text-neo-champagne mb-1">
                     {testimonials[currentIndex].name}
                   </h4>
 
@@ -220,19 +220,19 @@ export function Testimonials() {
       {/* Summary Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
         <NeoCard variant="flat" className="p-6 text-center hover:shadow-neo-elevated transition-all duration-300">
-          <div className="text-3xl font-playfair font-bold text-neo-gold">500+</div>
+          <div className="text-3xl font-cormorant font-bold text-neo-gold">500+</div>
           <div className="text-sm text-neo-taupe">Happy Clients</div>
         </NeoCard>
         <NeoCard variant="flat" className="p-6 text-center hover:shadow-neo-elevated transition-all duration-300">
-          <div className="text-3xl font-playfair font-bold text-neo-gold">4.9</div>
+          <div className="text-3xl font-cormorant font-bold text-neo-gold">4.9</div>
           <div className="text-sm text-neo-taupe">Average Rating</div>
         </NeoCard>
         <NeoCard variant="flat" className="p-6 text-center hover:shadow-neo-elevated transition-all duration-300">
-          <div className="text-3xl font-playfair font-bold text-neo-gold">98%</div>
+          <div className="text-3xl font-cormorant font-bold text-neo-gold">98%</div>
           <div className="text-sm text-neo-taupe">Satisfaction Rate</div>
         </NeoCard>
         <NeoCard variant="flat" className="p-6 text-center hover:shadow-neo-elevated transition-all duration-300">
-          <div className="text-3xl font-playfair font-bold text-neo-gold">5+</div>
+          <div className="text-3xl font-cormorant font-bold text-neo-gold">5+</div>
           <div className="text-sm text-neo-taupe">Years Experience</div>
         </NeoCard>
       </div>

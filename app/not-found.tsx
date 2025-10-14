@@ -122,13 +122,13 @@ export default function NotFound() {
           >
             <motion.div
               variants={itemVariants}
-              className="text-8xl md:text-9xl font-playfair font-bold text-primary/20 mb-4"
+              className="text-8xl md:text-9xl font-cormorant font-bold text-primary/20 mb-4"
             >
               404
             </motion.div>
             <motion.h1 
               variants={itemVariants}
-              className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-primary mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-cormorant font-bold text-primary mb-6"
             >
               Page Not Found
             </motion.h1>
@@ -159,7 +159,7 @@ export default function NotFound() {
           >
             <motion.h2 
               variants={itemVariants}
-              className="text-2xl md:text-3xl font-playfair font-bold text-primary mb-6 text-center"
+              className="text-2xl md:text-3xl font-cormorant font-bold text-primary mb-6 text-center"
             >
               Search Our Site
             </motion.h2>
@@ -200,7 +200,7 @@ export default function NotFound() {
           >
             <motion.h2 
               variants={itemVariants}
-              className="text-3xl md:text-4xl font-playfair font-bold text-primary mb-12 text-center"
+              className="text-3xl md:text-4xl font-cormorant font-bold text-primary mb-12 text-center"
             >
               Popular Pages
             </motion.h2>
@@ -218,7 +218,7 @@ export default function NotFound() {
                         <page.icon className="w-6 h-6 text-primary" />
                       </div>
                       <div>
-                        <h3 className="text-lg font-playfair font-bold text-primary group-hover:text-primary/80 transition-colors">
+                        <h3 className="text-lg font-cormorant font-bold text-primary group-hover:text-primary/80 transition-colors">
                           {page.title}
                         </h3>
                         <p className="text-muted-foreground text-sm">
@@ -246,7 +246,7 @@ export default function NotFound() {
           >
             <motion.h2 
               variants={itemVariants}
-              className="text-3xl md:text-4xl font-playfair font-bold text-primary mb-12 text-center"
+              className="text-3xl md:text-4xl font-cormorant font-bold text-primary mb-12 text-center"
             >
               Need Help?
             </motion.h2>
@@ -265,7 +265,7 @@ export default function NotFound() {
                     <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
                       <link.icon className="w-8 h-8 text-primary" />
                     </div>
-                    <h3 className="text-xl font-playfair font-bold text-primary mb-2 group-hover:text-primary/80 transition-colors">
+                    <h3 className="text-xl font-cormorant font-bold text-primary mb-2 group-hover:text-primary/80 transition-colors">
                       {link.title}
                     </h3>
                     <p className="text-muted-foreground">
@@ -291,7 +291,7 @@ export default function NotFound() {
           >
             <div className="grid md:grid-cols-2 gap-8">
               <motion.div variants={itemVariants}>
-                <h3 className="text-2xl font-playfair font-bold text-primary mb-6">
+                <h3 className="text-2xl font-cormorant font-bold text-primary mb-6">
                   Visit Our Salon
                 </h3>
                 <div className="space-y-4 text-muted-foreground">
@@ -316,7 +316,7 @@ export default function NotFound() {
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <h3 className="text-2xl font-playfair font-bold text-primary mb-6">
+                <h3 className="text-2xl font-cormorant font-bold text-primary mb-6">
                   Business Hours
                 </h3>
                 <div className="space-y-2 text-muted-foreground">
@@ -358,7 +358,7 @@ export default function NotFound() {
               className="bg-primary/10 border border-primary/20 rounded-lg p-8"
             >
               <Scissors className="w-16 h-16 text-primary mx-auto mb-6" />
-              <h2 className="text-3xl md:text-4xl font-playfair font-bold text-primary mb-4">
+              <h2 className="text-3xl md:text-4xl font-cormorant font-bold text-primary mb-4">
                 Ready for a New Look?
               </h2>
               <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">

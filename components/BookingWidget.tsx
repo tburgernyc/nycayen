@@ -104,7 +104,7 @@ export function BookingWidget({ preselectedService, className = "" }: BookingWid
     <div className={`max-w-4xl mx-auto ${className}`}>
       {/* Header */}
       <div className="text-center mb-8">
-        <h3 className="text-2xl md:text-3xl font-playfair font-bold text-neo-gold mb-4">
+        <h3 className="text-2xl md:text-3xl font-cormorant font-bold text-neo-gold mb-4">
           Book Your Appointment
         </h3>
         <p className="text-neo-taupe max-w-2xl mx-auto">
@@ -127,7 +127,7 @@ export function BookingWidget({ preselectedService, className = "" }: BookingWid
                 <div className="w-16 h-16 bg-neo-dark shadow-neo-pressed rounded-full flex items-center justify-center mx-auto">
                   <Calendar className="w-8 h-8 text-neo-gold" />
                 </div>
-                <h4 className="text-xl font-playfair font-semibold text-neo-champagne">
+                <h4 className="text-xl font-cormorant font-semibold text-neo-champagne">
                   Quick Online Booking
                 </h4>
                 <p className="text-neo-taupe">
@@ -148,7 +148,7 @@ export function BookingWidget({ preselectedService, className = "" }: BookingWid
 
           {/* Fallback Contact Options */}
           <NeoCard variant="elevated" className="p-6">
-            <h4 className="text-xl font-playfair font-semibold text-neo-champagne mb-4">
+            <h4 className="text-xl font-cormorant font-semibold text-neo-champagne mb-4">
               Other Ways to Book
             </h4>
             <div className="space-y-4">
@@ -202,7 +202,7 @@ export function BookingWidget({ preselectedService, className = "" }: BookingWid
                 <div className="w-10 h-10 bg-neo-dark shadow-neo-pressed rounded-full flex items-center justify-center">
                   <User className="w-5 h-5 text-neo-gold" />
                 </div>
-                <h4 className="text-xl font-playfair font-semibold text-neo-champagne">
+                <h4 className="text-xl font-cormorant font-semibold text-neo-champagne">
                   Booking Request Form
                 </h4>
               </div>
@@ -356,7 +356,7 @@ export function BookingWidget({ preselectedService, className = "" }: BookingWid
         className="mt-12 text-center"
       >
         <NeoCard variant="flat" className="p-6 max-w-2xl mx-auto">
-          <h4 className="text-lg font-playfair font-semibold text-neo-champagne mb-4 flex items-center justify-center space-x-2">
+          <h4 className="text-lg font-cormorant font-semibold text-neo-champagne mb-4 flex items-center justify-center space-x-2">
             <Clock className="w-5 h-5 text-neo-gold" />
             <span>Business Hours</span>
           </h4>

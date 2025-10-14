@@ -52,7 +52,7 @@ export function Footer() {
           {/* Brand Section */}
           <div className="space-y-6">
             <div>
-              <h3 className="text-2xl font-playfair font-bold text-neo-cyan mb-2">
+              <h3 className="text-2xl font-cormorant font-bold text-neo-cyan mb-2">
                 Nycayen
               </h3>
               <p className="text-sm text-neo-blue font-medium mb-4">
@@ -167,7 +167,7 @@ export function Footer() {
         {/* Newsletter Signup */}
         <div className="bg-neo-dark rounded-neo-lg p-8 mb-12 shadow-neo-pressed border border-neo-gray/20">
           <div className="text-center">
-            <h4 className="text-xl font-playfair font-bold text-neo-cyan mb-2">
+            <h4 className="text-xl font-cormorant font-bold text-neo-cyan mb-2">
               Stay Beautiful
             </h4>
             <p className="text-neo-gray mb-6">

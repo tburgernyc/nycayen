@@ -262,7 +262,7 @@ export const NeoCardTitle = forwardRef<
   <h3
     ref={ref}
     className={cn(
-      "text-2xl font-playfair font-semibold leading-none tracking-tight text-neo-champagne",
+      "text-2xl font-cormorant font-semibold leading-none tracking-tight text-neo-champagne",
       className
     )}
     {...props}
@@ -279,7 +279,7 @@ export const NeoCardDescription = forwardRef<
 >(({ className, ...props }, ref) => (
   <p
     ref={ref}
-    className={cn("text-sm text-neo-taupe font-poppins", className)}
+    className={cn("text-sm text-neo-taupe font-inter", className)}
     {...props}
   />
 ));
@@ -294,7 +294,7 @@ export const NeoCardContent = forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("text-neo-champagne font-poppins", className)}
+    className={cn("text-neo-champagne font-inter", className)}
     {...props}
   />
 ));

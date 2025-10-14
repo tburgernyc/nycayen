@@ -232,7 +232,7 @@ export default function BlogPage() {
           >
             <motion.h1 
               variants={itemVariants}
-              className="text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-primary mb-6"
+              className="text-5xl md:text-6xl lg:text-7xl font-cormorant font-bold text-primary mb-6"
             >
               Hair Care Blog
             </motion.h1>
@@ -262,7 +262,7 @@ export default function BlogPage() {
           >
             <motion.h2 
               variants={itemVariants}
-              className="text-3xl md:text-4xl font-playfair font-bold text-primary mb-8 text-center"
+              className="text-3xl md:text-4xl font-cormorant font-bold text-primary mb-8 text-center"
             >
               Featured Posts
             </motion.h2>
@@ -299,7 +299,7 @@ export default function BlogPage() {
                       </div>
                     </div>
                     
-                    <h3 className="text-xl font-playfair font-bold text-primary mb-3 group-hover:text-primary/80 transition-colors">
+                    <h3 className="text-xl font-cormorant font-bold text-primary mb-3 group-hover:text-primary/80 transition-colors">
                       {post.title}
                     </h3>
                     
@@ -425,7 +425,7 @@ export default function BlogPage() {
                       </div>
                     </div>
                     
-                    <h3 className="text-lg font-playfair font-bold text-primary mb-3 line-clamp-2 group-hover:text-primary/80 transition-colors">
+                    <h3 className="text-lg font-cormorant font-bold text-primary mb-3 line-clamp-2 group-hover:text-primary/80 transition-colors">
                       {post.title}
                     </h3>
                     
@@ -481,7 +481,7 @@ export default function BlogPage() {
                 className="text-center py-20"
               >
                 <Search className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-                <h3 className="text-xl font-playfair font-bold text-primary mb-2">
+                <h3 className="text-xl font-cormorant font-bold text-primary mb-2">
                   No Articles Found
                 </h3>
                 <p className="text-muted-foreground">
@@ -558,7 +558,7 @@ export default function BlogPage() {
           >
             <motion.h2 
               variants={itemVariants}
-              className="text-3xl md:text-4xl font-playfair font-bold text-primary mb-6"
+              className="text-3xl md:text-4xl font-cormorant font-bold text-primary mb-6"
             >
               Stay Updated
             </motion.h2>

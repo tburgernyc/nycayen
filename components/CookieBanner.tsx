@@ -154,7 +154,7 @@ export function CookieBanner() {
                       <Cookie className="w-6 h-6 text-neo-gold" />
                     </div>
                     <div>
-                      <h3 className="font-playfair font-semibold text-neo-champagne mb-1">
+                      <h3 className="font-cormorant font-semibold text-neo-champagne mb-1">
                         Cookie Preferences
                       </h3>
                       <p className="text-sm text-neo-taupe">
@@ -219,7 +219,7 @@ export function CookieBanner() {
               <div className="p-6">
                 <div className="mb-6">
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-playfair font-semibold text-neo-champagne">
+                    <h3 className="text-lg font-cormorant font-semibold text-neo-champagne">
                       Cookie Preferences
                     </h3>
                     <NeoIconButton

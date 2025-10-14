@@ -171,7 +171,7 @@ export function BlogPreview({ limit = 3, showFeatured = true, layout = 'grid' }:
                         Featured
                       </span>
                     )}
-                    <h3 className="text-xl font-playfair font-semibold text-neo-champagne group-hover:text-neo-gold transition-colors mb-2">
+                    <h3 className="text-xl font-cormorant font-semibold text-neo-champagne group-hover:text-neo-gold transition-colors mb-2">
                       <Link href={`/blog/${post.slug}`}>
                         {post.title}
                       </Link>
@@ -291,7 +291,7 @@ export function BlogPreview({ limit = 3, showFeatured = true, layout = 'grid' }:
               {/* Content */}
               <div className="p-6 space-y-4 flex-1 flex flex-col">
                 <div className="flex-1">
-                  <h3 className="text-lg font-playfair font-semibold text-neo-champagne group-hover:text-neo-gold transition-colors mb-2 line-clamp-2">
+                  <h3 className="text-lg font-cormorant font-semibold text-neo-champagne group-hover:text-neo-gold transition-colors mb-2 line-clamp-2">
                     <Link href={`/blog/${post.slug}`}>
                       {post.title}
                     </Link>

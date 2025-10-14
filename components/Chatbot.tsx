@@ -300,7 +300,7 @@ export function Chatbot() {
                     <Bot className="w-6 h-6 text-neo-dark" />
                   </div>
                   <div>
-                    <h3 className="font-playfair font-semibold text-neo-champagne">Nycayen Assistant</h3>
+                    <h3 className="font-cormorant font-semibold text-neo-champagne">Nycayen Assistant</h3>
                     <div className="flex items-center space-x-1">
                       <div className="w-2 h-2 bg-green-500 rounded-full shadow-[0_0_4px_rgba(34,197,94,0.6)]"></div>
                       <span className="text-xs text-neo-taupe">Online</span>

@@ -92,7 +92,7 @@ export default function AboutPage() {
           >
             <motion.h1 
               variants={itemVariants}
-              className="text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-primary mb-6"
+              className="text-5xl md:text-6xl lg:text-7xl font-cormorant font-bold text-primary mb-6"
             >
               About Nycayen
             </motion.h1>
@@ -122,7 +122,7 @@ export default function AboutPage() {
               className="space-y-6"
             >
               <motion.div variants={itemVariants}>
-                <h2 className="text-3xl md:text-4xl font-playfair font-bold text-primary mb-4">
+                <h2 className="text-3xl md:text-4xl font-cormorant font-bold text-primary mb-4">
                   Our Mission
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
@@ -148,7 +148,7 @@ export default function AboutPage() {
               className="space-y-6"
             >
               <motion.div variants={itemVariants}>
-                <h2 className="text-3xl md:text-4xl font-playfair font-bold text-primary mb-4">
+                <h2 className="text-3xl md:text-4xl font-cormorant font-bold text-primary mb-4">
                   Our Vision
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
@@ -181,7 +181,7 @@ export default function AboutPage() {
           >
             <motion.h2 
               variants={itemVariants}
-              className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-4"
+              className="text-4xl md:text-5xl font-cormorant font-bold text-primary mb-4"
             >
               Our Values
             </motion.h2>
@@ -204,7 +204,7 @@ export default function AboutPage() {
                 className="bg-card border border-border rounded-lg p-6 text-center hover:border-primary/50 transition-colors"
               >
                 <value.icon className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-playfair font-semibold text-primary mb-3">
+                <h3 className="text-xl font-cormorant font-semibold text-primary mb-3">
                   {value.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -232,7 +232,7 @@ export default function AboutPage() {
                 variants={itemVariants}
                 className="text-center"
               >
-                <div className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-2">
+                <div className="text-4xl md:text-5xl font-cormorant font-bold text-primary mb-2">
                   {stat.value}
                 </div>
                 <div className="text-muted-foreground font-medium">
@@ -256,7 +256,7 @@ export default function AboutPage() {
             >
               <motion.h2 
                 variants={itemVariants}
-                className="text-3xl md:text-4xl font-playfair font-bold text-primary mb-6"
+                className="text-3xl md:text-4xl font-cormorant font-bold text-primary mb-6"
               >
                 Experience & Expertise
               </motion.h2>
@@ -293,7 +293,7 @@ export default function AboutPage() {
             >
               <motion.h3 
                 variants={itemVariants}
-                className="text-2xl md:text-3xl font-playfair font-bold text-primary mb-6"
+                className="text-2xl md:text-3xl font-cormorant font-bold text-primary mb-6"
               >
                 Professional Certifications
               </motion.h3>
@@ -325,7 +325,7 @@ export default function AboutPage() {
           >
             <motion.h2 
               variants={itemVariants}
-              className="text-4xl md:text-5xl font-playfair font-bold text-primary mb-6"
+              className="text-4xl md:text-5xl font-cormorant font-bold text-primary mb-6"
             >
               Ready to Transform Your Look?
             </motion.h2>

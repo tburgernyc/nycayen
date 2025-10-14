@@ -228,7 +228,7 @@ export function ServicesList({ limit, showCategories = true }: ServicesListProps
                 {/* Service Info */}
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-xl font-playfair font-semibold text-neo-champagne mb-2">
+                    <h3 className="text-xl font-cormorant font-semibold text-neo-champagne mb-2">
                       {service.name}
                     </h3>
                     <p className="text-neo-taupe leading-relaxed text-sm">
@@ -312,7 +312,7 @@ export function ServicesList({ limit, showCategories = true }: ServicesListProps
       {displayedServices.length === 0 && (
         <NeoCard variant="flat" className="text-center py-12">
           <Sparkles className="w-16 h-16 text-neo-gold/50 mx-auto mb-4" />
-          <h3 className="text-xl font-playfair font-semibold text-neo-champagne mb-2">
+          <h3 className="text-xl font-cormorant font-semibold text-neo-champagne mb-2">
             No services found
           </h3>
           <p className="text-neo-taupe">

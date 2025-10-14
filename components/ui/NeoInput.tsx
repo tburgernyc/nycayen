@@ -11,7 +11,7 @@ import { cn } from '@/utils/cn';
  */
 const neoInputVariants = cva(
   // Base classes applied to all inputs
-  "w-full font-poppins transition-all duration-300 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed placeholder:text-neo-taupe/50",
+  "w-full font-inter transition-all duration-300 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed placeholder:text-neo-taupe/50",
   {
     variants: {
       /**
@@ -165,7 +165,7 @@ export const NeoInput = forwardRef<HTMLInputElement, NeoInputProps>(
         {label && (
           <label
             htmlFor={inputId}
-            className="block text-sm font-medium text-neo-champagne font-poppins"
+            className="block text-sm font-medium text-neo-champagne font-inter"
           >
             {label}
             {required && <span className="text-neo-gold ml-1" aria-label="required">*</span>}
@@ -231,7 +231,7 @@ export const NeoInput = forwardRef<HTMLInputElement, NeoInputProps>(
         {error && (
           <motion.p
             id={`${inputId}-error`}
-            className="text-sm text-red-400 font-poppins"
+            className="text-sm text-red-400 font-inter"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.2 }}
@@ -245,7 +245,7 @@ export const NeoInput = forwardRef<HTMLInputElement, NeoInputProps>(
         {!error && helperText && (
           <p
             id={`${inputId}-helper`}
-            className="text-sm text-neo-taupe font-poppins"
+            className="text-sm text-neo-taupe font-inter"
           >
             {helperText}
           </p>

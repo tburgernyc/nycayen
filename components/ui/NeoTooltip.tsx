@@ -142,7 +142,7 @@ export const NeoTooltip: React.FC<NeoTooltipProps> = ({
             <div
               className={cn(
                 "bg-neo-steel px-3 py-2 rounded-neo-md shadow-neo-elevated",
-                "text-sm text-neo-champagne font-poppins whitespace-nowrap",
+                "text-sm text-neo-champagne font-inter whitespace-nowrap",
                 "max-w-xs",
                 className
               )}

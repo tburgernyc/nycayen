@@ -184,7 +184,7 @@ export default function ContactPage() {
           >
             <motion.h1 
               variants={itemVariants}
-              className="text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-primary mb-6"
+              className="text-5xl md:text-6xl lg:text-7xl font-cormorant font-bold text-primary mb-6"
             >
               Contact Us
             </motion.h1>
@@ -219,7 +219,7 @@ export default function ContactPage() {
                 className="text-center"
               >
                 <stat.icon className="w-8 h-8 text-primary mx-auto mb-2" />
-                <div className="text-2xl md:text-3xl font-playfair font-bold text-primary mb-1">
+                <div className="text-2xl md:text-3xl font-cormorant font-bold text-primary mb-1">
                   {stat.value}
                 </div>
                 <div className="text-sm text-muted-foreground">
@@ -244,7 +244,7 @@ export default function ContactPage() {
             >
               <motion.h2 
                 variants={itemVariants}
-                className="text-3xl md:text-4xl font-playfair font-bold text-primary mb-8"
+                className="text-3xl md:text-4xl font-cormorant font-bold text-primary mb-8"
               >
                 Send us a Message
               </motion.h2>
@@ -452,7 +452,7 @@ export default function ContactPage() {
               className="space-y-8"
             >
               <motion.div variants={itemVariants}>
-                <h2 className="text-3xl md:text-4xl font-playfair font-bold text-primary mb-8">
+                <h2 className="text-3xl md:text-4xl font-cormorant font-bold text-primary mb-8">
                   Visit Our Salon
                 </h2>
                 
@@ -503,7 +503,7 @@ export default function ContactPage() {
               </motion.div>
 
               <motion.div variants={itemVariants}>
-                <h3 className="text-xl font-playfair font-bold text-primary mb-4">
+                <h3 className="text-xl font-cormorant font-bold text-primary mb-4">
                   Follow Us
                 </h3>
                 <div className="flex gap-4">
@@ -537,7 +537,7 @@ export default function ContactPage() {
               <motion.div variants={itemVariants}>
                 <div className="bg-primary/10 border border-primary/20 rounded-lg p-6 text-center">
                   <Calendar className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <h3 className="text-xl font-playfair font-bold text-primary mb-2">
+                  <h3 className="text-xl font-cormorant font-bold text-primary mb-2">
                     Ready to Book?
                   </h3>
                   <p className="text-muted-foreground mb-4">
@@ -576,7 +576,7 @@ export default function ContactPage() {
           >
             <motion.h2 
               variants={itemVariants}
-              className="text-3xl md:text-4xl font-playfair font-bold text-primary mb-8 text-center"
+              className="text-3xl md:text-4xl font-cormorant font-bold text-primary mb-8 text-center"
             >
               Find Us
             </motion.h2>
@@ -611,7 +611,7 @@ export default function ContactPage() {
           >
             <motion.h2 
               variants={itemVariants}
-              className="text-3xl md:text-4xl font-playfair font-bold text-primary mb-12 text-center"
+              className="text-3xl md:text-4xl font-cormorant font-bold text-primary mb-12 text-center"
             >
               Frequently Asked Questions
             </motion.h2>

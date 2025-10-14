@@ -1,21 +1,25 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Poppins } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { CookieBanner } from "@/components/CookieBanner";
 import { Chatbot } from "@/components/Chatbot";
 
-const playfair = Playfair_Display({
+// Cormorant Garamond - Headings & Titles
+// Sharp editorial serifs, angular, sophisticated
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-cormorant",
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
-const poppins = Poppins({
+// Inter - Body & UI
+// Geometric precision, clean, modern
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-poppins",
-  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -64,7 +68,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${playfair.variable} ${poppins.variable} min-h-screen bg-neo-dark text-neo-tan font-poppins antialiased`}
+        className={`${cormorant.variable} ${inter.variable} min-h-screen bg-neo-dark text-neo-tan font-inter antialiased`}
       >
         <Navbar />
         <main className="flex-1">

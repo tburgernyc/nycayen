@@ -62,8 +62,17 @@ module.exports = {
         },
       },
       fontFamily: {
-        playfair: ['Playfair Display', 'serif'],
-        poppins: ['Poppins', 'sans-serif'],
+        // New sharp, geometric fonts
+        cormorant: ['var(--font-cormorant)', 'Georgia', 'Times New Roman', 'serif'],
+        inter: ['var(--font-inter)', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Arial', 'sans-serif'],
+
+        // Semantic aliases
+        heading: ['var(--font-cormorant)', 'serif'],
+        body: ['var(--font-inter)', 'sans-serif'],
+
+        // Legacy aliases (backward compatible)
+        playfair: ['var(--font-cormorant)', 'serif'],
+        poppins: ['var(--font-inter)', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

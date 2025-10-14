@@ -124,7 +124,7 @@ export const NeoToggle = forwardRef<HTMLInputElement, NeoToggleProps>(
               <label
                 htmlFor={toggleId}
                 className={cn(
-                  "text-sm font-medium text-neo-champagne font-poppins cursor-pointer",
+                  "text-sm font-medium text-neo-champagne font-inter cursor-pointer",
                   props.disabled && "opacity-50 cursor-not-allowed"
                 )}
               >
@@ -134,7 +134,7 @@ export const NeoToggle = forwardRef<HTMLInputElement, NeoToggleProps>(
             {helperText && (
               <p
                 id={`${toggleId}-helper`}
-                className="text-xs text-neo-taupe font-poppins mt-0.5"
+                className="text-xs text-neo-taupe font-inter mt-0.5"
               >
                 {helperText}
               </p>

@@ -163,7 +163,7 @@ export const NeoModal: React.FC<NeoModalProps> = ({
                 {title && (
                   <h2
                     id="modal-title"
-                    className="text-2xl font-playfair font-semibold text-neo-champagne"
+                    className="text-2xl font-cormorant font-semibold text-neo-champagne"
                   >
                     {title}
                   </h2>
@@ -182,7 +182,7 @@ export const NeoModal: React.FC<NeoModalProps> = ({
             )}
 
             {/* Content */}
-            <div className="p-6 text-neo-champagne font-poppins max-h-[70vh] overflow-y-auto">
+            <div className="p-6 text-neo-champagne font-inter max-h-[70vh] overflow-y-auto">
               {children}
             </div>
           </motion.div>

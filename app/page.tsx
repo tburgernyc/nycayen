@@ -14,7 +14,7 @@ export default function Home() {
       <section className="py-20 bg-neo-dark">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-neo-cyan mb-4">
+            <h2 className="text-4xl md:text-5xl font-cormorant font-bold text-neo-cyan mb-4">
               Follow Our Journey
             </h2>
             <p className="text-xl text-neo-tan max-w-2xl mx-auto">
@@ -28,7 +28,7 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-b from-neo-dark to-neo-dark/80">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-neo-cyan mb-4">
+            <h2 className="text-4xl md:text-5xl font-cormorant font-bold text-neo-cyan mb-4">
               Our Services
             </h2>
             <p className="text-xl text-neo-tan max-w-2xl mx-auto">
@@ -42,7 +42,7 @@ export default function Home() {
       <section className="py-20 bg-neo-dark">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-neo-cyan mb-4">
+            <h2 className="text-4xl md:text-5xl font-cormorant font-bold text-neo-cyan mb-4">
               Client Testimonials
             </h2>
             <p className="text-xl text-neo-tan max-w-2xl mx-auto">
@@ -56,7 +56,7 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-b from-neo-dark to-neo-dark/80">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-neo-cyan mb-4">
+            <h2 className="text-4xl md:text-5xl font-cormorant font-bold text-neo-cyan mb-4">
               Our Portfolio
             </h2>
             <p className="text-xl text-neo-tan max-w-2xl mx-auto">
@@ -70,7 +70,7 @@ export default function Home() {
       <section className="py-20 bg-neo-dark">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-neo-cyan mb-4">
+            <h2 className="text-4xl md:text-5xl font-cormorant font-bold text-neo-cyan mb-4">
               Ready to Transform?
             </h2>
             <p className="text-xl text-neo-tan max-w-2xl mx-auto mb-8">
@@ -84,7 +84,7 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-b from-neo-dark to-neo-dark/80">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-neo-cyan mb-4">
+            <h2 className="text-4xl md:text-5xl font-cormorant font-bold text-neo-cyan mb-4">
               Latest from Our Blog
             </h2>
             <p className="text-xl text-neo-tan max-w-2xl mx-auto">

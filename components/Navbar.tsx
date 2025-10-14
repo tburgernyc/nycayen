@@ -50,7 +50,7 @@ export function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center space-x-2 text-2xl font-playfair font-bold text-neo-gold hover:text-neo-champagne transition-colors"
+            className="flex items-center space-x-2 text-2xl font-cormorant font-bold text-neo-gold hover:text-neo-champagne transition-colors"
           >
             <span>Nycayen</span>
           </Link>

@@ -304,7 +304,7 @@ export default function BookingPage() {
           >
             <motion.h1 
               variants={itemVariants}
-              className="text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-primary mb-6"
+              className="text-5xl md:text-6xl lg:text-7xl font-cormorant font-bold text-primary mb-6"
             >
               Book Your Appointment
             </motion.h1>
@@ -379,7 +379,7 @@ export default function BookingPage() {
                     exit="exit"
                     className="space-y-6"
                   >
-                    <h2 className="text-3xl font-playfair font-bold text-primary mb-8 text-center">
+                    <h2 className="text-3xl font-cormorant font-bold text-primary mb-8 text-center">
                       Choose Your Services
                     </h2>
                     
@@ -414,7 +414,7 @@ export default function BookingPage() {
                             </div>
                           </div>
                           
-                          <h3 className="text-lg font-playfair font-bold text-primary mb-2">
+                          <h3 className="text-lg font-cormorant font-bold text-primary mb-2">
                             {service.name}
                           </h3>
                           
@@ -440,7 +440,7 @@ export default function BookingPage() {
 
                     {selectedServices.length > 0 && (
                       <div className="bg-card border border-border rounded-lg p-6">
-                        <h3 className="font-playfair font-bold text-primary mb-4">
+                        <h3 className="font-cormorant font-bold text-primary mb-4">
                           Selected Services Summary
                         </h3>
                         <div className="space-y-2 mb-4">
@@ -478,7 +478,7 @@ export default function BookingPage() {
                     exit="exit"
                     className="space-y-6"
                   >
-                    <h2 className="text-3xl font-playfair font-bold text-primary mb-8 text-center">
+                    <h2 className="text-3xl font-cormorant font-bold text-primary mb-8 text-center">
                       Choose Your Stylist
                     </h2>
                     
@@ -500,7 +500,7 @@ export default function BookingPage() {
                             
                             <div className="flex-1">
                               <div className="flex items-center justify-between mb-2">
-                                <h3 className="text-lg font-playfair font-bold text-primary">
+                                <h3 className="text-lg font-cormorant font-bold text-primary">
                                   {stylist.name}
                                 </h3>
                                 <div className={`w-5 h-5 rounded border-2 transition-all ${
@@ -561,13 +561,13 @@ export default function BookingPage() {
                     exit="exit"
                     className="space-y-6"
                   >
-                    <h2 className="text-3xl font-playfair font-bold text-primary mb-8 text-center">
+                    <h2 className="text-3xl font-cormorant font-bold text-primary mb-8 text-center">
                       Pick Date & Time
                     </h2>
                     
                     <div className="grid md:grid-cols-2 gap-8">
                       <div>
-                        <h3 className="text-lg font-playfair font-bold text-primary mb-4">
+                        <h3 className="text-lg font-cormorant font-bold text-primary mb-4">
                           Select Date
                         </h3>
                         <input
@@ -583,7 +583,7 @@ export default function BookingPage() {
                       </div>
                       
                       <div>
-                        <h3 className="text-lg font-playfair font-bold text-primary mb-4">
+                        <h3 className="text-lg font-cormorant font-bold text-primary mb-4">
                           Available Times
                         </h3>
                         {selectedDate ? (
@@ -626,7 +626,7 @@ export default function BookingPage() {
                     exit="exit"
                     className="space-y-6"
                   >
-                    <h2 className="text-3xl font-playfair font-bold text-primary mb-8 text-center">
+                    <h2 className="text-3xl font-cormorant font-bold text-primary mb-8 text-center">
                       Your Details
                     </h2>
                     

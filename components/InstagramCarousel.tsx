@@ -256,7 +256,7 @@ export function InstagramCarousel() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <NeoButton variant="secondary">
+                      <NeoButton variant="elevated">
                         Follow Us
                       </NeoButton>
                     </a>

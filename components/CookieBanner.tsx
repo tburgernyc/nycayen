@@ -188,7 +188,7 @@ export function CookieBanner() {
                       </NeoButton>
                       <NeoButton
                         onClick={handleDeclineAll}
-                        variant="secondary"
+                        variant="elevated"
                         size="sm"
                       >
                         Essential Only
@@ -291,7 +291,7 @@ export function CookieBanner() {
                   </NeoButton>
                   <NeoButton
                     onClick={handleAcceptAll}
-                    variant="secondary"
+                    variant="elevated"
                     size="sm"
                   >
                     Accept All

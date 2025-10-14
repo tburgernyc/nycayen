@@ -278,7 +278,7 @@ export function ServicesList({ limit, showCategories = true }: ServicesListProps
                     </Link>
                     <Link href={`/services#${service.category}`}>
                       <NeoButton
-                        variant="secondary"
+                        variant="elevated"
                         fullWidth
                         icon={<ArrowRight className="w-4 h-4" />}
                       >
@@ -298,7 +298,7 @@ export function ServicesList({ limit, showCategories = true }: ServicesListProps
         <div className="text-center mt-12">
           <Link href="/services">
             <NeoButton
-              variant="secondary"
+              variant="elevated"
               size="lg"
               icon={<ArrowRight className="w-4 h-4" />}
             >

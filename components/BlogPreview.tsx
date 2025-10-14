@@ -362,7 +362,7 @@ export function BlogPreview({ limit = 3, showFeatured = true, layout = 'grid' }:
       <div className="text-center mt-12">
         <Link href="/blog">
           <NeoButton
-            variant="secondary"
+            variant="elevated"
             size="lg"
             icon={<ArrowRight className="w-4 h-4" />}
           >

@@ -179,7 +179,7 @@ export function BookingWidget({ preselectedService, className = "" }: BookingWid
               </div>
 
               <NeoButton
-                variant="secondary"
+                variant="elevated"
                 fullWidth
                 onClick={() => setShowFallbackForm(true)}
                 icon={<MessageSquare className="w-5 h-5" />}

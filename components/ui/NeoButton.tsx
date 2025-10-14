@@ -1,7 +1,7 @@
 "use client";
 
 import { forwardRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, HTMLMotionProps } from 'framer-motion';
 import { Loader2 } from 'lucide-react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils/cn';
@@ -59,7 +59,7 @@ const neoButtonVariants = cva(
  * Extends HTML button attributes for full compatibility
  */
 export interface NeoButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends Omit<HTMLMotionProps<"button">, "ref">,
     VariantProps<typeof neoButtonVariants> {
   /**
    * Icon to display in the button
@@ -149,8 +149,8 @@ export const NeoButton = forwardRef<HTMLButtonElement, NeoButtonProps>(
         className={cn(neoButtonVariants({ variant, size, fullWidth, className }))}
         disabled={isDisabled}
         // Framer Motion animation variants
-        whileHover={!isDisabled ? { scale: variant === 'elevated' || variant === 'gold' ? 1.05 : 1.02 } : {}}
-        whileTap={!isDisabled ? { scale: 0.95 } : {}}
+        whileHover={!isDisabled ? { scale: variant === 'elevated' || variant === 'gold' ? 1.05 : 1.02 } : undefined}
+        whileTap={!isDisabled ? { scale: 0.95 } : undefined}
         transition={{ duration: 0.2, ease: 'easeInOut' }}
         {...props}
       >

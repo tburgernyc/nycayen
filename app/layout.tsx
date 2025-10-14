@@ -68,7 +68,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${cormorant.variable} ${inter.variable} min-h-screen bg-neo-dark text-neo-tan font-inter antialiased`}
+        className={`${cormorant.variable} ${inter.variable} min-h-screen bg-neo-black text-neo-almond font-inter antialiased`}
       >
         <Navbar />
         <main className="flex-1">

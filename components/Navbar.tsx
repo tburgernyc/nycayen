@@ -38,125 +38,162 @@ export function Navbar() {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-neo-dark/95 backdrop-blur-md shadow-neo-elevated border-b border-neo-taupe/20"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center space-x-2 text-2xl font-cormorant font-bold text-neo-gold hover:text-neo-champagne transition-colors"
-          >
-            <span>Nycayen</span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-neo-gold relative ${
-                  isActive(item.href)
-                    ? "text-neo-gold"
-                    : "text-neo-champagne hover:text-neo-gold"
-                }`}
-              >
-                {item.name}
-                {isActive(item.href) && (
-                  <motion.div
-                    layoutId="navbar-indicator"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-neo-gold rounded-full shadow-[0_0_8px_rgba(197,164,109,0.6)]"
-                    initial={false}
-                  />
-                )}
-              </Link>
-            ))}
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center space-x-4">
+    <>
+      {/* Floating Pill-Shaped Navigation - Desktop */}
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className={`fixed left-1/2 -translate-x-1/2 z-50 hidden lg:block transition-all duration-300 ${
+          isScrolled ? "top-4" : "top-6"
+        }`}
+      >
+        <div className="bg-neo-gunmetal/95 backdrop-blur-md rounded-full px-6 py-3 shadow-neo-elevated border border-neo-walnut/30">
+          <div className="flex items-center gap-6">
+            {/* Logo */}
             <Link
-              href="tel:+1-555-123-4567"
-              className="flex items-center space-x-2 text-neo-champagne hover:text-neo-gold transition-colors"
+              href="/"
+              className="flex items-center text-xl font-cormorant font-bold text-neo-khaki hover:text-neo-almond transition-colors px-3"
             >
-              <Phone className="w-4 h-4" />
-              <span className="text-sm font-medium">Call Now</span>
+              Nycayen
             </Link>
-            <Link href="/booking">
-              <NeoButton variant="gold" icon={<Calendar className="w-4 h-4" />}>
-                Book Now
-              </NeoButton>
-            </Link>
-          </div>
 
-          {/* Mobile Menu Button */}
-          <NeoIconButton
-            icon={isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            onClick={() => setIsOpen(!isOpen)}
-            variant="elevated"
-            className="lg:hidden"
-            aria-label="Toggle menu"
-          />
-        </div>
-      </div>
-
-      {/* Mobile Navigation */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden bg-neo-dark/95 backdrop-blur-md border-t border-neo-taupe/20 shadow-neo-elevated"
-          >
-            <div className="container mx-auto px-4 py-6">
-              <div className="flex flex-col space-y-4">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setIsOpen(false)}
-                    className={`text-lg font-medium transition-colors py-2 ${
+            {/* Navigation Links */}
+            <div className="flex items-center gap-1">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="relative px-4 py-2 group"
+                >
+                  <span
+                    className={`text-sm font-medium transition-colors ${
                       isActive(item.href)
-                        ? "text-neo-gold border-l-2 border-neo-gold pl-4"
-                        : "text-neo-champagne hover:text-neo-gold hover:pl-4"
+                        ? "text-neo-khaki"
+                        : "text-neo-almond hover:text-neo-khaki"
                     }`}
                   >
                     {item.name}
-                  </Link>
-                ))}
+                  </span>
+                  {isActive(item.href) && (
+                    <motion.div
+                      layoutId="navbar-pill-indicator"
+                      className="absolute inset-0 bg-neo-walnut/40 rounded-full shadow-neo-pressed"
+                      initial={false}
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </Link>
+              ))}
+            </div>
 
-                <div className="pt-4 mt-4 border-t border-neo-taupe/20 space-y-3">
-                  <Link
-                    href="tel:+1-555-123-4567"
-                    onClick={() => setIsOpen(false)}
-                    className="flex items-center space-x-3 text-neo-champagne hover:text-neo-gold transition-colors py-2"
-                  >
-                    <Phone className="w-5 h-5" />
-                    <span className="text-lg font-medium">Call Now</span>
-                  </Link>
-                  <Link href="/booking" onClick={() => setIsOpen(false)}>
-                    <NeoButton
-                      variant="gold"
-                      fullWidth
-                      icon={<Calendar className="w-5 h-5" />}
+            {/* CTA Buttons */}
+            <div className="flex items-center gap-3 pl-2 ml-2 border-l border-neo-walnut/30">
+              <NeoButton
+                variant="ghost"
+                size="sm"
+                icon={<Phone className="w-4 h-4" />}
+                onClick={() => window.location.href = "tel:+1-555-123-4567"}
+                className="text-neo-almond hover:text-neo-khaki"
+              >
+                Call
+              </NeoButton>
+              <Link href="/booking">
+                <NeoButton
+                  variant="gold"
+                  size="sm"
+                  icon={<Calendar className="w-4 h-4" />}
+                  className="shadow-neo-flat hover:shadow-neo-elevated"
+                >
+                  Book Now
+                </NeoButton>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </motion.nav>
+
+      {/* Mobile Navigation - Full Width Top Bar */}
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 lg:hidden transition-all duration-300 ${
+          isScrolled
+            ? "bg-neo-gunmetal/95 backdrop-blur-md shadow-neo-elevated border-b border-neo-walnut/30"
+            : "bg-neo-black/80 backdrop-blur-sm"
+        }`}
+      >
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <Link
+              href="/"
+              className="flex items-center text-xl font-cormorant font-bold text-neo-khaki hover:text-neo-almond transition-colors"
+            >
+              Nycayen
+            </Link>
+
+            {/* Mobile Menu Button */}
+            <NeoIconButton
+              icon={isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              onClick={() => setIsOpen(!isOpen)}
+              variant="elevated"
+              className="bg-neo-gunmetal text-neo-almond"
+              aria-label="Toggle menu"
+            />
+          </div>
+        </div>
+
+        {/* Mobile Menu Dropdown */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="bg-neo-gunmetal/95 backdrop-blur-md border-t border-neo-walnut/30 shadow-neo-elevated"
+            >
+              <div className="container mx-auto px-4 py-6">
+                <div className="flex flex-col space-y-2">
+                  {navigation.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`text-base font-medium transition-all duration-200 py-3 px-4 rounded-neo-md ${
+                        isActive(item.href)
+                          ? "text-neo-khaki bg-neo-walnut/40 shadow-neo-pressed"
+                          : "text-neo-almond hover:text-neo-khaki hover:bg-neo-walnut/20"
+                      }`}
                     >
-                      Book Appointment
-                    </NeoButton>
-                  </Link>
+                      {item.name}
+                    </Link>
+                  ))}
+
+                  <div className="pt-4 mt-4 border-t border-neo-walnut/30 space-y-3">
+                    <Link
+                      href="tel:+1-555-123-4567"
+                      onClick={() => setIsOpen(false)}
+                      className="flex items-center gap-3 text-neo-almond hover:text-neo-khaki transition-colors py-2 px-4"
+                    >
+                      <Phone className="w-5 h-5" />
+                      <span className="text-base font-medium">Call Now</span>
+                    </Link>
+                    <Link href="/booking" onClick={() => setIsOpen(false)}>
+                      <NeoButton
+                        variant="gold"
+                        fullWidth
+                        icon={<Calendar className="w-5 h-5" />}
+                      >
+                        Book Appointment
+                      </NeoButton>
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
+    </>
   );
 }

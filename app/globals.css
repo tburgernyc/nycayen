@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    /* Neomorphism Color System - Nycayen Brand */
-    --background: 13 13 13; /* #0D0D0D - Neo dark */
-    --foreground: 216 207 196; /* #D8CFC4 - Neo champagne */
-    --card: 59 59 59; /* #3B3B3B - Neo steel */
-    --card-foreground: 216 207 196;
-    --popover: 59 59 59;
-    --popover-foreground: 216 207 196;
-    --primary: 197 164 109; /* #C5A46D - Neo gold */
-    --primary-foreground: 13 13 13;
-    --secondary: 59 59 59; /* #3B3B3B - Neo steel */
-    --secondary-foreground: 216 207 196;
-    --muted: 166 159 151; /* #A69F97 - Neo taupe */
-    --muted-foreground: 216 207 196;
-    --accent: 197 164 109; /* #C5A46D - Neo gold */
-    --accent-foreground: 13 13 13;
+    /* Neomorphism Color System - Earth Tones */
+    --background: 10 9 8; /* #0a0908 - Neo black */
+    --foreground: 234 224 213; /* #eae0d5 - Neo almond */
+    --card: 34 51 59; /* #22333b - Neo gunmetal */
+    --card-foreground: 234 224 213;
+    --popover: 34 51 59;
+    --popover-foreground: 234 224 213;
+    --primary: 198 172 143; /* #c6ac8f - Neo khaki */
+    --primary-foreground: 10 9 8;
+    --secondary: 34 51 59; /* #22333b - Neo gunmetal */
+    --secondary-foreground: 234 224 213;
+    --muted: 94 80 63; /* #5e503f - Neo walnut */
+    --muted-foreground: 234 224 213;
+    --accent: 198 172 143; /* #c6ac8f - Neo khaki */
+    --accent-foreground: 10 9 8;
     --destructive: 239 68 68;
     --destructive-foreground: 248 250 252;
-    --border: 166 159 151;
-    --input: 166 159 151;
-    --ring: 197 164 109;
+    --border: 94 80 63;
+    --input: 94 80 63;
+    --ring: 198 172 143;
     --radius: 0.5rem;
   }
 
@@ -71,24 +71,24 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0D0D0D; /* neo-dark */
+  background: #0a0908; /* neo-black */
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C5A46D; /* neo-gold */
+  background: #c6ac8f; /* neo-khaki */
   border-radius: 10px;
-  border: 2px solid #0D0D0D;
+  border: 2px solid #0a0908;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #D8CFC4; /* neo-champagne */
+  background: #eae0d5; /* neo-almond */
 }
 
 /* Firefox scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #C5A46D #0D0D0D;
+  scrollbar-color: #c6ac8f #0a0908;
 }
 
 /* Smooth scrolling */
@@ -149,7 +149,7 @@ html {
 
 /* Gradient text - Neomorphism */
 .gradient-text {
-  background: linear-gradient(135deg, #C5A46D 0%, #D8CFC4 100%);
+  background: linear-gradient(135deg, #c6ac8f 0%, #eae0d5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -181,7 +181,7 @@ html {
 
 /* Hero section background - Dark neomorphism */
 .hero-bg {
-  background: linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 50%, #0D0D0D 100%);
+  background: linear-gradient(135deg, #0a0908 0%, #22333b 50%, #0a0908 100%);
 }
 
 /* Neomorphism card styles */
@@ -233,7 +233,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.02em; /* Tighter for editorial sophistication */
-  color: #D8CFC4; /* neo-champagne */
+  color: #eae0d5; /* neo-almond */
 }
 
 h1 {

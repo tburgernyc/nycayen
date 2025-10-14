@@ -8,16 +8,16 @@ import { BlogPreview } from "@/components/BlogPreview";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-neo-dark">
+    <div className="min-h-screen bg-neo-black">
       <HeroSection />
 
-      <section className="py-20 bg-neo-dark">
+      <section className="py-20 bg-neo-black">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-cormorant font-bold text-neo-cyan mb-4">
+            <h2 className="text-4xl md:text-5xl font-cormorant font-bold text-neo-khaki mb-4">
               Follow Our Journey
             </h2>
-            <p className="text-xl text-neo-tan max-w-2xl mx-auto">
+            <p className="text-xl text-neo-almond max-w-2xl mx-auto">
               Discover the latest transformations and behind-the-scenes moments from our salon
             </p>
           </div>
@@ -25,13 +25,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-b from-neo-dark to-neo-dark/80">
+      <section className="py-20 bg-gradient-to-b from-neo-black to-neo-gunmetal/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-cormorant font-bold text-neo-cyan mb-4">
+            <h2 className="text-4xl md:text-5xl font-cormorant font-bold text-neo-khaki mb-4">
               Our Services
             </h2>
-            <p className="text-xl text-neo-tan max-w-2xl mx-auto">
+            <p className="text-xl text-neo-almond max-w-2xl mx-auto">
               Discover our range of personalized hair styling services designed to enhance your natural beauty
             </p>
           </div>
@@ -39,13 +39,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-neo-dark">
+      <section className="py-20 bg-neo-black">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-cormorant font-bold text-neo-cyan mb-4">
+            <h2 className="text-4xl md:text-5xl font-cormorant font-bold text-neo-khaki mb-4">
               Client Testimonials
             </h2>
-            <p className="text-xl text-neo-tan max-w-2xl mx-auto">
+            <p className="text-xl text-neo-almond max-w-2xl mx-auto">
               Hear from our satisfied clients about their transformative experiences
             </p>
           </div>
@@ -53,13 +53,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-b from-neo-dark to-neo-dark/80">
+      <section className="py-20 bg-gradient-to-b from-neo-black to-neo-gunmetal/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-cormorant font-bold text-neo-cyan mb-4">
+            <h2 className="text-4xl md:text-5xl font-cormorant font-bold text-neo-khaki mb-4">
               Our Portfolio
             </h2>
-            <p className="text-xl text-neo-tan max-w-2xl mx-auto">
+            <p className="text-xl text-neo-almond max-w-2xl mx-auto">
               Explore our stunning client transformations and artistic creations
             </p>
           </div>
@@ -67,13 +67,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-neo-dark">
+      <section className="py-20 bg-neo-black">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-cormorant font-bold text-neo-cyan mb-4">
+            <h2 className="text-4xl md:text-5xl font-cormorant font-bold text-neo-khaki mb-4">
               Ready to Transform?
             </h2>
-            <p className="text-xl text-neo-tan max-w-2xl mx-auto mb-8">
+            <p className="text-xl text-neo-almond max-w-2xl mx-auto mb-8">
               Book your appointment today and let us help you discover your perfect look
             </p>
           </div>
@@ -81,13 +81,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-b from-neo-dark to-neo-dark/80">
+      <section className="py-20 bg-gradient-to-b from-neo-black to-neo-gunmetal/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-cormorant font-bold text-neo-cyan mb-4">
+            <h2 className="text-4xl md:text-5xl font-cormorant font-bold text-neo-khaki mb-4">
               Latest from Our Blog
             </h2>
-            <p className="text-xl text-neo-tan max-w-2xl mx-auto">
+            <p className="text-xl text-neo-almond max-w-2xl mx-auto">
               Stay updated with the latest hair trends, tips, and beauty insights
             </p>
           </div>

@@ -10,36 +10,37 @@
 /**
  * Predefined neomorphic shadow combinations
  * Each shadow type has light and dark components for the dual-shadow effect
+ * Updated for Earth Tone color palette
  */
 export const neoShadows = {
   /** Subtle elevation - for minimal depth */
   flat: {
-    light: '4px 4px 8px rgba(0, 0, 0, 0.4)',
-    dark: '-4px -4px 8px rgba(59, 59, 59, 0.1)',
+    light: '4px 4px 8px rgba(10, 9, 8, 0.4)',
+    dark: '-4px -4px 8px rgba(34, 51, 59, 0.1)',
   },
-  
+
   /** Standard elevation - for most floating elements */
   elevated: {
-    light: '8px 8px 16px rgba(0, 0, 0, 0.6)',
-    dark: '-8px -8px 16px rgba(59, 59, 59, 0.15)',
+    light: '8px 8px 16px rgba(10, 9, 8, 0.6)',
+    dark: '-8px -8px 16px rgba(34, 51, 59, 0.15)',
   },
-  
+
   /** High elevation - for prominent floating elements */
   high: {
-    light: '12px 12px 24px rgba(0, 0, 0, 0.7)',
-    dark: '-12px -12px 24px rgba(59, 59, 59, 0.2)',
+    light: '12px 12px 24px rgba(10, 9, 8, 0.7)',
+    dark: '-12px -12px 24px rgba(34, 51, 59, 0.2)',
   },
-  
+
   /** Pressed/inset - for input fields and inactive states */
   pressed: {
-    light: 'inset 6px 6px 12px rgba(0, 0, 0, 0.6)',
-    dark: 'inset -6px -6px 12px rgba(59, 59, 59, 0.15)',
+    light: 'inset 6px 6px 12px rgba(10, 9, 8, 0.6)',
+    dark: 'inset -6px -6px 12px rgba(34, 51, 59, 0.15)',
   },
-  
+
   /** Deep pressed/inset - for emphasized recessed areas */
   pressedDeep: {
-    light: 'inset 8px 8px 16px rgba(0, 0, 0, 0.7)',
-    dark: 'inset -8px -8px 16px rgba(59, 59, 59, 0.2)',
+    light: 'inset 8px 8px 16px rgba(10, 9, 8, 0.7)',
+    dark: 'inset -8px -8px 16px rgba(34, 51, 59, 0.2)',
   },
 } as const;
 
@@ -102,9 +103,9 @@ export function createCustomShadow(
   inset: boolean = false
 ): string {
   const insetPrefix = inset ? 'inset ' : '';
-  const lightShadow = `${insetPrefix}${offset}px ${offset}px ${offset * 2}px rgba(0, 0, 0, ${opacity})`;
-  const darkShadow = `${insetPrefix}-${offset}px -${offset}px ${offset * 2}px rgba(59, 59, 59, ${opacity * 0.25})`;
-  
+  const lightShadow = `${insetPrefix}${offset}px ${offset}px ${offset * 2}px rgba(10, 9, 8, ${opacity})`;
+  const darkShadow = `${insetPrefix}-${offset}px -${offset}px ${offset * 2}px rgba(34, 51, 59, ${opacity * 0.25})`;
+
   return `${lightShadow}, ${darkShadow}`;
 }
 
@@ -120,7 +121,7 @@ export const shadowVariants = {
   
   /** Hover state - enhanced shadow */
   hover: {
-    boxShadow: '10px 10px 20px rgba(0,0,0,0.65), -10px -10px 20px rgba(59,59,59,0.18)',
+    boxShadow: '10px 10px 20px rgba(10,9,8,0.65), -10px -10px 20px rgba(34,51,59,0.18)',
   },
   
   /** Active/pressed state - inset shadow */
@@ -130,7 +131,7 @@ export const shadowVariants = {
   
   /** Focus state - with outline */
   focus: {
-    boxShadow: '0 0 0 3px rgba(197,164,109,0.3), 8px 8px 16px rgba(0,0,0,0.6), -8px -8px 16px rgba(59,59,59,0.15)',
+    boxShadow: '0 0 0 3px rgba(198,172,143,0.3), 8px 8px 16px rgba(10,9,8,0.6), -8px -8px 16px rgba(34,51,59,0.15)',
   },
 } as const;
 
@@ -191,12 +192,12 @@ export const cardShadowAnimation = {
  * 
  * @example
  * ```tsx
- * <div style={{ boxShadow: getGlowShadow('197,164,109', 0.4) }}>
+ * <div style={{ boxShadow: getGlowShadow('198,172,143', 0.4) }}>
  *   Glowing element
  * </div>
  * ```
  */
-export function getGlowShadow(color: string, intensity: number = 0.4): string {
+export function getGlowShadow(color: string = '198,172,143', intensity: number = 0.4): string {
   return `0 0 20px rgba(${color},${intensity}), ${getShadow('elevated')}`;
 }
 

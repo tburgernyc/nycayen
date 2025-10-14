@@ -260,13 +260,13 @@ export function BookingWidget({ preselectedService, className = "" }: BookingWid
               <label htmlFor="service" className="block text-sm font-medium text-neo-champagne mb-2">
                 Desired Service *
               </label>
-              <NeoInput
-                as="select"
+              <select
                 id="service"
                 name="service"
                 value={formData.service}
                 onChange={handleInputChange}
                 required
+                className="w-full px-4 py-3 text-base rounded-neo-md bg-neo-dark text-neo-champagne shadow-neo-pressed focus:shadow-neo-focus border border-neo-steel/30 focus:border-neo-gold/50 focus:outline-none transition-all duration-300"
               >
                 <option value="">Select a service</option>
                 {services.map((service) => (
@@ -274,7 +274,7 @@ export function BookingWidget({ preselectedService, className = "" }: BookingWid
                     {service}
                   </option>
                 ))}
-              </NeoInput>
+              </select>
             </div>
 
             {/* Preferred Date & Time */}
@@ -297,12 +297,12 @@ export function BookingWidget({ preselectedService, className = "" }: BookingWid
                 <label htmlFor="preferredTime" className="block text-sm font-medium text-neo-champagne mb-2">
                   Preferred Time
                 </label>
-                <NeoInput
-                  as="select"
+                <select
                   id="preferredTime"
                   name="preferredTime"
                   value={formData.preferredTime}
                   onChange={handleInputChange}
+                  className="w-full px-4 py-3 text-base rounded-neo-md bg-neo-dark text-neo-champagne shadow-neo-pressed focus:shadow-neo-focus border border-neo-steel/30 focus:border-neo-gold/50 focus:outline-none transition-all duration-300"
                 >
                   <option value="">Select time</option>
                   {timeSlots.map((time) => (
@@ -310,7 +310,7 @@ export function BookingWidget({ preselectedService, className = "" }: BookingWid
                       {time}
                     </option>
                   ))}
-                </NeoInput>
+                </select>
               </div>
             </div>
 
@@ -319,14 +319,14 @@ export function BookingWidget({ preselectedService, className = "" }: BookingWid
               <label htmlFor="message" className="block text-sm font-medium text-neo-champagne mb-2">
                 Additional Information
               </label>
-              <NeoInput
-                as="textarea"
+              <textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleInputChange}
                 rows={4}
                 placeholder="Tell us about your hair goals, any concerns, or special requests..."
+                className="w-full px-4 py-3 text-base rounded-neo-md bg-neo-dark text-neo-champagne shadow-neo-pressed focus:shadow-neo-focus border border-neo-steel/30 focus:border-neo-gold/50 focus:outline-none transition-all duration-300 placeholder:text-neo-taupe/50 resize-none"
               />
             </div>
 

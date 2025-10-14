@@ -160,25 +160,51 @@ export const NeoCard = forwardRef<HTMLDivElement, NeoCardProps>(
       },
     };
 
-    const CardComponent = animate ? motion.div : 'div';
-    const motionProps = animate
-      ? {
-          initial: 'hidden' as const,
-          animate: 'visible' as const,
-          variants: animationVariants,
-        }
-      : {};
+    // Use conditional rendering instead of dynamic component
+    if (animate) {
+      return (
+        <motion.div
+          ref={ref}
+          className={cn(neoCardVariants({ variant, padding, hover, interactive, className }))}
+          initial="hidden"
+          animate="visible"
+          variants={animationVariants}
+          {...(props as HTMLMotionProps<"div">)}
+        >
+        {/* Header section */}
+        {header && (
+          <div className={cn(
+            "border-b border-neo-taupe/20",
+            padding === 'none' ? 'p-6 pb-4' : 'mb-4 pb-4'
+          )}>
+            {header}
+          </div>
+        )}
 
-    // Type-safe props spreading
-    const componentProps = animate
-      ? ({ ...motionProps, ...props } as HTMLMotionProps<"div">)
-      : props;
+        {/* Main content */}
+        <div>
+          {children}
+        </div>
 
+        {/* Footer section */}
+        {footer && (
+          <div className={cn(
+            "border-t border-neo-taupe/20",
+            padding === 'none' ? 'p-6 pt-4' : 'mt-4 pt-4'
+          )}>
+            {footer}
+          </div>
+        )}
+        </motion.div>
+      );
+    }
+
+    // Non-animated version
     return (
-      <CardComponent
+      <div
         ref={ref}
         className={cn(neoCardVariants({ variant, padding, hover, interactive, className }))}
-        {...componentProps}
+        {...props}
       >
         {/* Header section */}
         {header && (
@@ -204,7 +230,7 @@ export const NeoCard = forwardRef<HTMLDivElement, NeoCardProps>(
             {footer}
           </div>
         )}
-      </CardComponent>
+      </div>
     );
   }
 );

@@ -3,6 +3,9 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Instagram, Play, Heart, MessageCircle } from "lucide-react";
+import { NeoCard } from "./ui/NeoCard";
+import { NeoButton } from "./ui/NeoButton";
+import { NeoIconButton } from "./ui/NeoIconButton";
 
 interface InstagramPost {
   id: string;
@@ -142,17 +145,17 @@ export function InstagramCarousel() {
   if (loading) {
     return (
       <div className="flex justify-center items-center py-20">
-        <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+        <div className="w-16 h-16 border-4 border-neo-gold border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
 
   if (posts.length === 0) {
     return (
-      <div className="text-center py-20">
-        <Instagram className="w-16 h-16 text-primary/50 mx-auto mb-4" />
-        <p className="text-muted-foreground">No Instagram posts available</p>
-      </div>
+      <NeoCard variant="flat" className="text-center py-20">
+        <Instagram className="w-16 h-16 text-neo-gold/50 mx-auto mb-4" />
+        <p className="text-neo-taupe">No Instagram posts available</p>
+      </NeoCard>
     );
   }
 
@@ -169,111 +172,119 @@ export function InstagramCarousel() {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="relative"
           >
-            <div className="grid md:grid-cols-2 gap-8 items-center bg-gradient-to-br from-primary/5 to-secondary/5 p-8 rounded-2xl">
-              {/* Image/Video Section */}
-              <div className="relative">
-                <div className="aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-primary/10 to-secondary/10">
-                  {posts[currentIndex].type === 'video' && (
-                    <div className="absolute inset-0 flex items-center justify-center z-10">
-                      <div className="w-16 h-16 bg-primary/80 rounded-full flex items-center justify-center backdrop-blur-sm">
-                        <Play className="w-6 h-6 text-accent ml-1" fill="currentColor" />
+            <NeoCard variant="elevated" className="p-8">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                {/* Image/Video Section */}
+                <div className="relative">
+                  <div className="aspect-square rounded-neo-lg overflow-hidden bg-neo-dark shadow-neo-pressed">
+                    {posts[currentIndex].type === 'video' && (
+                      <div className="absolute inset-0 flex items-center justify-center z-10">
+                        <div className="w-16 h-16 bg-neo-gold/80 rounded-full flex items-center justify-center backdrop-blur-sm shadow-neo-elevated">
+                          <Play className="w-6 h-6 text-neo-dark ml-1" fill="currentColor" />
+                        </div>
                       </div>
+                    )}
+                    <div className="w-full h-full flex items-center justify-center">
+                      <Instagram className="w-16 h-16 text-neo-gold/50" />
                     </div>
-                  )}
-                  <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                    <Instagram className="w-16 h-16 text-primary/50" />
+                  </div>
+
+                  {/* Type Indicator */}
+                  <div className="absolute top-4 right-4">
+                    {posts[currentIndex].type === 'video' && (
+                      <div className="bg-neo-steel/90 px-3 py-1.5 rounded-full text-xs text-neo-champagne flex items-center space-x-1 shadow-neo-flat">
+                        <Play className="w-3 h-3" fill="currentColor" />
+                        <span>Video</span>
+                      </div>
+                    )}
+                    {posts[currentIndex].type === 'carousel' && (
+                      <div className="bg-neo-steel/90 px-3 py-1.5 rounded-full text-xs text-neo-champagne shadow-neo-flat">
+                        Carousel
+                      </div>
+                    )}
                   </div>
                 </div>
 
-                {/* Type Indicator */}
-                <div className="absolute top-4 right-4">
-                  {posts[currentIndex].type === 'video' && (
-                    <div className="bg-dark/80 px-2 py-1 rounded-full text-xs text-accent flex items-center space-x-1">
-                      <Play className="w-3 h-3" fill="currentColor" />
-                      <span>Video</span>
+                {/* Content Section */}
+                <div className="space-y-6">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-12 h-12 bg-neo-dark shadow-neo-pressed rounded-full flex items-center justify-center">
+                      <Instagram className="w-6 h-6 text-neo-gold" />
                     </div>
-                  )}
-                  {posts[currentIndex].type === 'carousel' && (
-                    <div className="bg-dark/80 px-2 py-1 rounded-full text-xs text-accent">
-                      Carousel
+                    <div>
+                      <h3 className="font-playfair font-semibold text-neo-champagne">@nycayenmoore</h3>
+                      <p className="text-sm text-neo-taupe">Nycayen Hair Salon</p>
                     </div>
-                  )}
-                </div>
-              </div>
-
-              {/* Content Section */}
-              <div className="space-y-6">
-                <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
-                    <Instagram className="w-6 h-6 text-accent" />
                   </div>
+
                   <div>
-                    <h3 className="font-semibold text-accent">@nycayenmoore</h3>
-                    <p className="text-sm text-muted-foreground">Sponsored</p>
+                    <p className="text-neo-champagne leading-relaxed">
+                      {formatCaption(posts[currentIndex].caption)}
+                    </p>
                   </div>
-                </div>
 
-                <div>
-                  <p className="text-accent leading-relaxed">
-                    {formatCaption(posts[currentIndex].caption)}
-                  </p>
-                </div>
-
-                <div className="flex items-center space-x-6">
-                  <div className="flex items-center space-x-2">
-                    <Heart className="w-5 h-5 text-red-500" />
-                    <span className="text-sm text-muted-foreground">
-                      {formatCount(posts[currentIndex].like_count)}
-                    </span>
+                  <div className="flex items-center space-x-6">
+                    <div className="flex items-center space-x-2">
+                      <Heart className="w-5 h-5 text-red-500" />
+                      <span className="text-sm text-neo-taupe">
+                        {formatCount(posts[currentIndex].like_count)}
+                      </span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <MessageCircle className="w-5 h-5 text-neo-taupe" />
+                      <span className="text-sm text-neo-taupe">
+                        {formatCount(posts[currentIndex].comments_count)}
+                      </span>
+                    </div>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <MessageCircle className="w-5 h-5 text-muted-foreground" />
-                    <span className="text-sm text-muted-foreground">
-                      {formatCount(posts[currentIndex].comments_count)}
-                    </span>
-                  </div>
-                </div>
 
-                <div className="flex space-x-4">
-                  <a
-                    href={posts[currentIndex].permalink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary flex items-center space-x-2"
-                  >
-                    <Instagram className="w-4 h-4" />
-                    <span>View on Instagram</span>
-                  </a>
-                  <a
-                    href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://instagram.com/nycayenmoore"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-outline"
-                  >
-                    Follow Us
-                  </a>
+                  <div className="flex space-x-4">
+                    <a
+                      href={posts[currentIndex].permalink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <NeoButton
+                        variant="gold"
+                        icon={<Instagram className="w-4 h-4" />}
+                      >
+                        View on Instagram
+                      </NeoButton>
+                    </a>
+                    <a
+                      href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://instagram.com/nycayenmoore"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <NeoButton variant="secondary">
+                        Follow Us
+                      </NeoButton>
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
+            </NeoCard>
           </motion.div>
         </AnimatePresence>
 
         {/* Navigation Buttons */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-dark/80 hover:bg-dark/90 rounded-full flex items-center justify-center text-accent transition-all duration-200 hover:scale-110"
-          aria-label="Previous post"
-        >
-          <ChevronLeft className="w-6 h-6" />
-        </button>
+        <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
+          <NeoIconButton
+            onClick={prevSlide}
+            variant="elevated"
+            icon={<ChevronLeft className="w-6 h-6" />}
+            aria-label="Previous post"
+          />
+        </div>
 
-        <button
-          onClick={nextSlide}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-dark/80 hover:bg-dark/90 rounded-full flex items-center justify-center text-accent transition-all duration-200 hover:scale-110"
-          aria-label="Next post"
-        >
-          <ChevronRight className="w-6 h-6" />
-        </button>
+        <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
+          <NeoIconButton
+            onClick={nextSlide}
+            variant="elevated"
+            icon={<ChevronRight className="w-6 h-6" />}
+            aria-label="Next post"
+          />
+        </div>
       </div>
 
       {/* Thumbnail Navigation */}
@@ -284,8 +295,8 @@ export function InstagramCarousel() {
             onClick={() => setCurrentIndex(index)}
             className={`w-3 h-3 rounded-full transition-all duration-200 ${
               index === currentIndex
-                ? "bg-primary scale-125"
-                : "bg-primary/30 hover:bg-primary/50"
+                ? "bg-neo-gold scale-125 shadow-[0_0_8px_rgba(197,164,109,0.6)]"
+                : "bg-neo-taupe/30 hover:bg-neo-taupe/50 shadow-neo-pressed"
             }`}
             aria-label={`Go to post ${index + 1}`}
           />
@@ -294,7 +305,7 @@ export function InstagramCarousel() {
 
       {/* Post Counter */}
       <div className="text-center mt-4">
-        <span className="text-sm text-muted-foreground">
+        <span className="text-sm text-neo-taupe">
           {currentIndex + 1} of {posts.length}
         </span>
       </div>

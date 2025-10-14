@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
+import { NeoCard } from "./ui/NeoCard";
+import { NeoIconButton } from "./ui/NeoIconButton";
 
 interface Testimonial {
   id: string;
@@ -99,7 +101,7 @@ export function Testimonials() {
       <Star
         key={i}
         className={`w-4 h-4 ${
-          i < rating ? "text-yellow-400 fill-current" : "text-gray-300"
+          i < rating ? "text-neo-gold fill-current" : "text-neo-taupe/40"
         }`}
       />
     ));
@@ -125,75 +127,78 @@ export function Testimonials() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8 md:p-12 relative overflow-hidden"
             onMouseEnter={() => setIsAutoPlaying(false)}
             onMouseLeave={() => setIsAutoPlaying(true)}
           >
-            {/* Background Quote Icon */}
-            <div className="absolute top-6 right-6 opacity-10">
-              <Quote className="w-20 h-20 text-primary" />
-            </div>
+            <NeoCard variant="elevated" className="p-8 md:p-12 relative overflow-hidden">
+              {/* Background Quote Icon */}
+              <div className="absolute top-6 right-6 opacity-5">
+                <Quote className="w-20 h-20 text-neo-gold" />
+              </div>
 
-            <div className="grid md:grid-cols-3 gap-8 items-center relative z-10">
-              {/* Client Avatar & Info */}
-              <div className="text-center md:text-left">
-                <div className="w-24 h-24 bg-gradient-to-br from-primary to-secondary rounded-full mx-auto md:mx-0 mb-4 flex items-center justify-center">
-                  <span className="text-2xl font-bold text-accent">
-                    {testimonials[currentIndex].name.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
-                
-                <h4 className="text-xl font-semibold text-accent mb-1">
-                  {testimonials[currentIndex].name}
-                </h4>
-                
-                <p className="text-muted-foreground text-sm mb-3">
-                  {testimonials[currentIndex].location}
-                </p>
-                
-                <div className="flex justify-center md:justify-start mb-3">
-                  {renderStars(testimonials[currentIndex].rating)}
-                </div>
-                
+              <div className="grid md:grid-cols-3 gap-8 items-center relative z-10">
+                {/* Client Avatar & Info */}
                 <div className="text-center md:text-left">
-                  <p className="text-primary font-medium text-sm">
-                    {testimonials[currentIndex].service}
+                  <div className="w-24 h-24 bg-neo-dark shadow-neo-pressed rounded-full mx-auto md:mx-0 mb-4 flex items-center justify-center border-2 border-neo-gold/20">
+                    <span className="text-2xl font-playfair font-bold text-neo-gold">
+                      {testimonials[currentIndex].name.split(' ').map(n => n[0]).join('')}
+                    </span>
+                  </div>
+
+                  <h4 className="text-xl font-playfair font-semibold text-neo-champagne mb-1">
+                    {testimonials[currentIndex].name}
+                  </h4>
+
+                  <p className="text-neo-taupe text-sm mb-3">
+                    {testimonials[currentIndex].location}
                   </p>
-                  <p className="text-muted-foreground text-xs">
-                    {formatDate(testimonials[currentIndex].date)}
-                  </p>
+
+                  <div className="flex justify-center md:justify-start mb-3">
+                    {renderStars(testimonials[currentIndex].rating)}
+                  </div>
+
+                  <div className="text-center md:text-left">
+                    <p className="text-neo-gold font-medium text-sm">
+                      {testimonials[currentIndex].service}
+                    </p>
+                    <p className="text-neo-taupe text-xs">
+                      {formatDate(testimonials[currentIndex].date)}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Testimonial Content */}
+                <div className="md:col-span-2">
+                  <blockquote className="text-lg md:text-xl leading-relaxed text-neo-champagne italic relative">
+                    <Quote className="w-6 h-6 text-neo-gold/50 absolute -top-2 -left-2" />
+                    <span className="ml-4">
+                      &ldquo;{testimonials[currentIndex].comment}&rdquo;
+                    </span>
+                  </blockquote>
                 </div>
               </div>
-
-              {/* Testimonial Content */}
-              <div className="md:col-span-2">
-                <blockquote className="text-lg md:text-xl leading-relaxed text-accent italic relative">
-                  <Quote className="w-6 h-6 text-primary/50 absolute -top-2 -left-2" />
-                  <span className="ml-4">
-                    &ldquo;{testimonials[currentIndex].comment}&rdquo;
-                  </span>
-                </blockquote>
-              </div>
-            </div>
+            </NeoCard>
           </motion.div>
         </AnimatePresence>
 
         {/* Navigation Buttons */}
-        <button
-          onClick={prevTestimonial}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-dark/80 hover:bg-dark/90 rounded-full flex items-center justify-center text-accent transition-all duration-200 hover:scale-110 z-20"
-          aria-label="Previous testimonial"
-        >
-          <ChevronLeft className="w-6 h-6" />
-        </button>
+        <div className="absolute left-4 top-1/2 transform -translate-y-1/2 z-20">
+          <NeoIconButton
+            icon={<ChevronLeft className="w-6 h-6" />}
+            onClick={prevTestimonial}
+            variant="elevated"
+            aria-label="Previous testimonial"
+          />
+        </div>
 
-        <button
-          onClick={nextTestimonial}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-dark/80 hover:bg-dark/90 rounded-full flex items-center justify-center text-accent transition-all duration-200 hover:scale-110 z-20"
-          aria-label="Next testimonial"
-        >
-          <ChevronRight className="w-6 h-6" />
-        </button>
+        <div className="absolute right-4 top-1/2 transform -translate-y-1/2 z-20">
+          <NeoIconButton
+            icon={<ChevronRight className="w-6 h-6" />}
+            onClick={nextTestimonial}
+            variant="elevated"
+            aria-label="Next testimonial"
+          />
+        </div>
       </div>
 
       {/* Testimonial Indicators */}
@@ -204,8 +209,8 @@ export function Testimonials() {
             onClick={() => goToTestimonial(index)}
             className={`transition-all duration-300 ${
               index === currentIndex
-                ? "w-8 h-3 bg-primary rounded-full"
-                : "w-3 h-3 bg-primary/30 hover:bg-primary/50 rounded-full"
+                ? "w-8 h-3 bg-neo-gold rounded-full shadow-[0_0_8px_rgba(197,164,109,0.6)]"
+                : "w-3 h-3 bg-neo-taupe/30 hover:bg-neo-taupe/50 rounded-full shadow-neo-pressed"
             }`}
             aria-label={`Go to testimonial ${index + 1}`}
           />
@@ -213,30 +218,30 @@ export function Testimonials() {
       </div>
 
       {/* Summary Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 text-center">
-        <div className="space-y-2">
-          <div className="text-3xl font-bold text-primary">500+</div>
-          <div className="text-sm text-muted-foreground">Happy Clients</div>
-        </div>
-        <div className="space-y-2">
-          <div className="text-3xl font-bold text-primary">4.9</div>
-          <div className="text-sm text-muted-foreground">Average Rating</div>
-        </div>
-        <div className="space-y-2">
-          <div className="text-3xl font-bold text-primary">98%</div>
-          <div className="text-sm text-muted-foreground">Satisfaction Rate</div>
-        </div>
-        <div className="space-y-2">
-          <div className="text-3xl font-bold text-primary">5+</div>
-          <div className="text-sm text-muted-foreground">Years Experience</div>
-        </div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+        <NeoCard variant="flat" className="p-6 text-center hover:shadow-neo-elevated transition-all duration-300">
+          <div className="text-3xl font-playfair font-bold text-neo-gold">500+</div>
+          <div className="text-sm text-neo-taupe">Happy Clients</div>
+        </NeoCard>
+        <NeoCard variant="flat" className="p-6 text-center hover:shadow-neo-elevated transition-all duration-300">
+          <div className="text-3xl font-playfair font-bold text-neo-gold">4.9</div>
+          <div className="text-sm text-neo-taupe">Average Rating</div>
+        </NeoCard>
+        <NeoCard variant="flat" className="p-6 text-center hover:shadow-neo-elevated transition-all duration-300">
+          <div className="text-3xl font-playfair font-bold text-neo-gold">98%</div>
+          <div className="text-sm text-neo-taupe">Satisfaction Rate</div>
+        </NeoCard>
+        <NeoCard variant="flat" className="p-6 text-center hover:shadow-neo-elevated transition-all duration-300">
+          <div className="text-3xl font-playfair font-bold text-neo-gold">5+</div>
+          <div className="text-sm text-neo-taupe">Years Experience</div>
+        </NeoCard>
       </div>
 
       {/* Auto-play Indicator */}
       {isAutoPlaying && (
-        <div className="flex justify-center mt-4">
-          <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+        <div className="flex justify-center mt-6">
+          <div className="flex items-center space-x-2 text-sm text-neo-taupe bg-neo-dark px-4 py-2 rounded-full shadow-neo-pressed">
+            <div className="w-2 h-2 bg-neo-gold rounded-full animate-pulse shadow-[0_0_6px_rgba(197,164,109,0.8)]"></div>
             <span>Auto-playing testimonials</span>
           </div>
         </div>

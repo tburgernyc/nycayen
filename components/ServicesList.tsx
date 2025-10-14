@@ -3,17 +3,19 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { 
-  Scissors, 
-  Palette, 
-  Sparkles, 
-  Crown, 
-  Users, 
+import {
+  Scissors,
+  Palette,
+  Sparkles,
+  Crown,
+  Users,
   Calendar,
   Clock,
   Star,
-  ArrowRight 
+  ArrowRight
 } from "lucide-react";
+import { NeoButton } from "./ui/NeoButton";
+import { NeoCard } from "./ui/NeoCard";
 
 interface Service {
   id: string;
@@ -181,14 +183,14 @@ export function ServicesList({ limit, showCategories = true }: ServicesListProps
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`flex items-center space-x-2 px-6 py-3 rounded-full transition-all duration-200 ${
+                className={`flex items-center space-x-2 px-6 py-3 rounded-neo-md font-medium transition-all duration-300 ${
                   selectedCategory === category.id
-                    ? "bg-primary text-primary-foreground shadow-lg"
-                    : "bg-primary/10 text-accent hover:bg-primary/20"
+                    ? "bg-neo-steel text-neo-gold shadow-neo-elevated hover:shadow-neo-elevated-hover"
+                    : "bg-neo-dark text-neo-champagne shadow-neo-pressed hover:shadow-neo-flat border border-neo-taupe/20"
                 }`}
               >
                 <Icon className="w-4 h-4" />
-                <span className="font-medium">{category.name}</span>
+                <span>{category.name}</span>
               </button>
             );
           })}
@@ -208,81 +210,84 @@ export function ServicesList({ limit, showCategories = true }: ServicesListProps
             <motion.div
               key={service.id}
               variants={itemVariants}
-              className="card p-6 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden group"
+              className="relative group"
             >
-              {/* Popular Badge */}
-              {service.popular && (
-                <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
-                  Popular
-                </div>
-              )}
-
-              {/* Service Icon */}
-              <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Icon className="w-8 h-8 text-primary" />
-              </div>
-
-              {/* Service Info */}
-              <div className="space-y-4">
-                <div>
-                  <h3 className="text-xl font-semibold text-accent mb-2">
-                    {service.name}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-
-                {/* Price & Duration */}
-                <div className="flex items-center justify-between text-sm">
-                  <div className="flex items-center space-x-1 text-primary font-semibold">
-                    <span>{service.price}</span>
+              <NeoCard variant="elevated" className="p-6 h-full hover:shadow-neo-elevated-hover transition-all duration-300 relative overflow-hidden">
+                {/* Popular Badge */}
+                {service.popular && (
+                  <div className="absolute top-4 right-4 bg-neo-gold text-neo-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-neo-flat">
+                    Popular
                   </div>
-                  <div className="flex items-center space-x-1 text-muted-foreground">
-                    <Clock className="w-4 h-4" />
-                    <span>{service.duration}</span>
+                )}
+
+                {/* Service Icon */}
+                <div className="w-16 h-16 bg-neo-dark rounded-neo-md shadow-neo-pressed flex items-center justify-center mb-6 group-hover:shadow-neo-flat transition-all duration-300">
+                  <Icon className="w-8 h-8 text-neo-gold" />
+                </div>
+
+                {/* Service Info */}
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="text-xl font-playfair font-semibold text-neo-champagne mb-2">
+                      {service.name}
+                    </h3>
+                    <p className="text-neo-taupe leading-relaxed text-sm">
+                      {service.description}
+                    </p>
+                  </div>
+
+                  {/* Price & Duration */}
+                  <div className="flex items-center justify-between text-sm pt-3 border-t border-neo-taupe/20">
+                    <div className="flex items-center space-x-1 text-neo-gold font-semibold">
+                      <span>{service.price}</span>
+                    </div>
+                    <div className="flex items-center space-x-1 text-neo-taupe">
+                      <Clock className="w-4 h-4" />
+                      <span>{service.duration}</span>
+                    </div>
+                  </div>
+
+                  {/* Features */}
+                  <div className="space-y-2">
+                    <h4 className="text-sm font-medium text-neo-champagne">Includes:</h4>
+                    <ul className="space-y-1.5">
+                      {service.features.slice(0, 3).map((feature, index) => (
+                        <li key={index} className="text-sm text-neo-taupe flex items-center space-x-2">
+                          <div className="w-1.5 h-1.5 bg-neo-gold rounded-full flex-shrink-0 shadow-[0_0_4px_rgba(197,164,109,0.6)]"></div>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                      {service.features.length > 3 && (
+                        <li className="text-sm text-neo-gold font-medium">
+                          +{service.features.length - 3} more...
+                        </li>
+                      )}
+                    </ul>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex flex-col space-y-3 pt-4">
+                    <Link href={`/booking?service=${encodeURIComponent(service.name)}`}>
+                      <NeoButton
+                        variant="gold"
+                        fullWidth
+                        icon={<Calendar className="w-4 h-4" />}
+                      >
+                        Book Now
+                      </NeoButton>
+                    </Link>
+                    <Link href={`/services#${service.category}`}>
+                      <NeoButton
+                        variant="secondary"
+                        fullWidth
+                        icon={<ArrowRight className="w-4 h-4" />}
+                      >
+                        Learn More
+                      </NeoButton>
+                    </Link>
                   </div>
                 </div>
-
-                {/* Features */}
-                <div className="space-y-2">
-                  <h4 className="text-sm font-medium text-accent">Includes:</h4>
-                  <ul className="space-y-1">
-                    {service.features.slice(0, 3).map((feature, index) => (
-                      <li key={index} className="text-sm text-muted-foreground flex items-center space-x-2">
-                        <div className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></div>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                    {service.features.length > 3 && (
-                      <li className="text-sm text-primary">
-                        +{service.features.length - 3} more...
-                      </li>
-                    )}
-                  </ul>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="flex flex-col space-y-3 pt-4">
-                  <Link
-                    href={`/booking?service=${encodeURIComponent(service.name)}`}
-                    className="btn-primary w-full flex items-center justify-center space-x-2"
-                  >
-                    <Calendar className="w-4 h-4" />
-                    <span>Book Now</span>
-                  </Link>
-                  <Link
-                    href={`/services#${service.category}`}
-                    className="btn-outline w-full flex items-center justify-center space-x-2"
-                  >
-                    <span>Learn More</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-
-              {/* Hover Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              </NeoCard>
             </motion.div>
           );
         })}
@@ -291,27 +296,29 @@ export function ServicesList({ limit, showCategories = true }: ServicesListProps
       {/* View All Services Link */}
       {limit && filteredServices.length > limit && (
         <div className="text-center mt-12">
-          <Link
-            href="/services"
-            className="btn-outline inline-flex items-center space-x-2"
-          >
-            <span>View All Services</span>
-            <ArrowRight className="w-4 h-4" />
+          <Link href="/services">
+            <NeoButton
+              variant="secondary"
+              size="lg"
+              icon={<ArrowRight className="w-4 h-4" />}
+            >
+              View All Services
+            </NeoButton>
           </Link>
         </div>
       )}
 
       {/* No Services Message */}
       {displayedServices.length === 0 && (
-        <div className="text-center py-12">
-          <Sparkles className="w-16 h-16 text-primary/50 mx-auto mb-4" />
-          <h3 className="text-xl font-semibold text-accent mb-2">
+        <NeoCard variant="flat" className="text-center py-12">
+          <Sparkles className="w-16 h-16 text-neo-gold/50 mx-auto mb-4" />
+          <h3 className="text-xl font-playfair font-semibold text-neo-champagne mb-2">
             No services found
           </h3>
-          <p className="text-muted-foreground">
+          <p className="text-neo-taupe">
             Try selecting a different category to see our available services.
           </p>
-        </div>
+        </NeoCard>
       )}
     </div>
   );

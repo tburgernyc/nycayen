@@ -2,13 +2,15 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  MessageCircle, 
-  X, 
-  Send, 
-  User, 
+import {
+  MessageCircle,
+  X,
+  Send,
+  User,
   Bot
 } from "lucide-react";
+import { NeoCard } from "./ui/NeoCard";
+import { NeoInput } from "./ui/NeoInput";
 
 interface Message {
   id: string;
@@ -240,7 +242,7 @@ export function Chatbot() {
       {/* Chat Button */}
       <motion.button
         onClick={toggleChat}
-        className="fixed bottom-6 right-6 w-14 h-14 bg-primary hover:bg-primary/90 rounded-full shadow-lg flex items-center justify-center text-primary-foreground z-40 transition-all duration-200 hover:scale-110"
+        className="fixed bottom-6 right-6 w-14 h-14 bg-neo-gold hover:bg-neo-gold/90 rounded-full shadow-neo-elevated hover:shadow-neo-elevated-hover flex items-center justify-center text-neo-dark z-40 transition-all duration-300"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         aria-label="Open chat"
@@ -288,23 +290,24 @@ export function Chatbot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-24 right-6 w-80 sm:w-96 h-96 bg-dark/95 backdrop-blur-md border border-primary/20 rounded-xl shadow-2xl z-40 flex flex-col overflow-hidden"
+            className="fixed bottom-24 right-6 w-80 sm:w-96 h-96 z-40 flex flex-col overflow-hidden"
           >
-            {/* Header */}
-            <div className="p-4 border-b border-primary/20 bg-gradient-to-r from-primary/10 to-secondary/10">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                  <Bot className="w-6 h-6 text-primary-foreground" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-accent">Nycayen Assistant</h3>
-                  <div className="flex items-center space-x-1">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span className="text-xs text-muted-foreground">Online</span>
+            <NeoCard variant="elevated" className="h-full flex flex-col shadow-neo-high">
+              {/* Header */}
+              <div className="p-4 border-b border-neo-taupe/20 bg-neo-dark">
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-neo-gold rounded-full flex items-center justify-center shadow-neo-flat">
+                    <Bot className="w-6 h-6 text-neo-dark" />
+                  </div>
+                  <div>
+                    <h3 className="font-playfair font-semibold text-neo-champagne">Nycayen Assistant</h3>
+                    <div className="flex items-center space-x-1">
+                      <div className="w-2 h-2 bg-green-500 rounded-full shadow-[0_0_4px_rgba(34,197,94,0.6)]"></div>
+                      <span className="text-xs text-neo-taupe">Online</span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
             {/* Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4">
@@ -314,15 +317,15 @@ export function Chatbot() {
                   className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-[80%] p-3 rounded-lg ${
+                    className={`max-w-[80%] p-3 rounded-neo-md ${
                       message.sender === 'user'
-                        ? 'bg-primary text-primary-foreground'
-                        : 'bg-primary/10 text-accent'
+                        ? 'bg-neo-gold text-neo-dark shadow-neo-flat'
+                        : 'bg-neo-dark text-neo-champagne shadow-neo-pressed'
                     }`}
                   >
                     <div className="flex items-start space-x-2">
                       {message.sender === 'bot' && (
-                        <Bot className="w-4 h-4 mt-1 flex-shrink-0 text-primary" />
+                        <Bot className="w-4 h-4 mt-1 flex-shrink-0 text-neo-gold" />
                       )}
                       {message.sender === 'user' && (
                         <User className="w-4 h-4 mt-1 flex-shrink-0" />
@@ -330,9 +333,9 @@ export function Chatbot() {
                       <div className="flex-1">
                         <p className="text-sm whitespace-pre-line">{message.content}</p>
                         <span className="text-xs opacity-75 mt-1 block">
-                          {message.timestamp.toLocaleTimeString([], { 
-                            hour: '2-digit', 
-                            minute: '2-digit' 
+                          {message.timestamp.toLocaleTimeString([], {
+                            hour: '2-digit',
+                            minute: '2-digit'
                           })}
                         </span>
                       </div>
@@ -345,7 +348,7 @@ export function Chatbot() {
                           <button
                             key={index}
                             onClick={() => handleQuickReply(reply)}
-                            className="block w-full text-left text-xs p-2 bg-primary/20 hover:bg-primary/30 rounded text-accent transition-colors"
+                            className="block w-full text-left text-xs p-2 bg-neo-steel shadow-neo-flat hover:shadow-neo-elevated rounded-neo-sm text-neo-champagne transition-all duration-200"
                           >
                             {reply}
                           </button>
@@ -359,13 +362,13 @@ export function Chatbot() {
               {/* Typing Indicator */}
               {isTyping && (
                 <div className="flex justify-start">
-                  <div className="bg-primary/10 p-3 rounded-lg">
+                  <div className="bg-neo-dark shadow-neo-pressed p-3 rounded-neo-md">
                     <div className="flex items-center space-x-2">
-                      <Bot className="w-4 h-4 text-primary" />
+                      <Bot className="w-4 h-4 text-neo-gold" />
                       <div className="flex space-x-1">
-                        <div className="w-2 h-2 bg-primary rounded-full animate-bounce"></div>
-                        <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                        <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                        <div className="w-2 h-2 bg-neo-gold rounded-full animate-bounce"></div>
+                        <div className="w-2 h-2 bg-neo-gold rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                        <div className="w-2 h-2 bg-neo-gold rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                       </div>
                     </div>
                   </div>
@@ -376,7 +379,7 @@ export function Chatbot() {
             </div>
 
             {/* Input */}
-            <div className="p-4 border-t border-primary/20">
+            <div className="p-4 border-t border-neo-taupe/20">
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
@@ -384,23 +387,24 @@ export function Chatbot() {
                 }}
                 className="flex space-x-2"
               >
-                <input
+                <NeoInput
                   ref={inputRef}
                   type="text"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Type your message..."
-                  className="flex-1 px-3 py-2 bg-dark/50 border border-primary/20 rounded-lg text-accent placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                  className="flex-1 text-sm"
                 />
                 <button
                   type="submit"
                   disabled={!inputValue.trim() || isTyping}
-                  className="w-10 h-10 bg-primary hover:bg-primary/90 disabled:bg-primary/50 rounded-lg flex items-center justify-center text-primary-foreground transition-colors"
+                  className="w-10 h-10 bg-neo-gold hover:bg-neo-gold/90 disabled:bg-neo-taupe/50 rounded-neo-md shadow-neo-flat hover:shadow-neo-elevated flex items-center justify-center text-neo-dark transition-all duration-200"
                 >
                   <Send className="w-4 h-4" />
                 </button>
               </form>
             </div>
+            </NeoCard>
           </motion.div>
         )}
       </AnimatePresence>

@@ -4,6 +4,8 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Calendar, User, Clock, ArrowRight, Tag, Eye, MessageCircle } from "lucide-react";
+import { NeoCard } from "./ui/NeoCard";
+import { NeoButton } from "./ui/NeoButton";
 
 interface BlogPost {
   id: string;
@@ -148,85 +150,86 @@ export function BlogPreview({ limit = 3, showFeatured = true, layout = 'grid' }:
           <motion.article
             key={post.id}
             variants={itemVariants}
-            className="card p-6 hover:shadow-2xl transition-all duration-300 group"
           >
-            <div className="flex flex-col md:flex-row gap-6">
-              {/* Image Placeholder */}
-              <div className="md:w-1/3">
-                <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <Tag className="w-8 h-8 text-primary/50 mx-auto mb-2" />
-                    <p className="text-primary/50 text-sm">{post.category}</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="md:w-2/3 space-y-4">
-                <div>
-                  {post.featured && (
-                    <span className="inline-block bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full mb-3">
-                      Featured
-                    </span>
-                  )}
-                  <h3 className="text-xl font-semibold text-accent group-hover:text-primary transition-colors mb-2">
-                    <Link href={`/blog/${post.slug}`}>
-                      {post.title}
-                    </Link>
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {post.excerpt}
-                  </p>
-                </div>
-
-                <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                  <div className="flex items-center space-x-1">
-                    <User className="w-4 h-4" />
-                    <span>{post.author}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Calendar className="w-4 h-4" />
-                    <span>{formatDate(post.publishedAt)}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Clock className="w-4 h-4" />
-                    <span>{post.readTime}</span>
-                  </div>
-                  {post.views && (
-                    <div className="flex items-center space-x-1">
-                      <Eye className="w-4 h-4" />
-                      <span>{formatNumber(post.views)}</span>
+            <NeoCard variant="elevated" className="p-6 hover:shadow-neo-elevated-hover transition-all duration-300 group">
+              <div className="flex flex-col md:flex-row gap-6">
+                {/* Image Placeholder */}
+                <div className="md:w-1/3">
+                  <div className="aspect-video bg-neo-dark shadow-neo-pressed rounded-neo-md flex items-center justify-center">
+                    <div className="text-center">
+                      <Tag className="w-8 h-8 text-neo-gold/50 mx-auto mb-2" />
+                      <p className="text-neo-gold/50 text-sm">{post.category}</p>
                     </div>
-                  )}
-                  {post.comments && (
-                    <div className="flex items-center space-x-1">
-                      <MessageCircle className="w-4 h-4" />
-                      <span>{post.comments}</span>
-                    </div>
-                  )}
+                  </div>
                 </div>
 
-                <div className="flex items-center justify-between">
-                  <div className="flex flex-wrap gap-2">
-                    {post.tags.slice(0, 3).map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full"
-                      >
-                        #{tag}
+                {/* Content */}
+                <div className="md:w-2/3 space-y-4">
+                  <div>
+                    {post.featured && (
+                      <span className="inline-block bg-neo-gold text-neo-dark text-xs font-bold px-3 py-1.5 rounded-full mb-3 shadow-neo-flat">
+                        Featured
                       </span>
-                    ))}
+                    )}
+                    <h3 className="text-xl font-playfair font-semibold text-neo-champagne group-hover:text-neo-gold transition-colors mb-2">
+                      <Link href={`/blog/${post.slug}`}>
+                        {post.title}
+                      </Link>
+                    </h3>
+                    <p className="text-neo-taupe leading-relaxed">
+                      {post.excerpt}
+                    </p>
                   </div>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="flex items-center space-x-1 text-primary hover:text-primary/80 transition-colors"
-                  >
-                    <span>Read More</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
+
+                  <div className="flex flex-wrap items-center gap-4 text-sm text-neo-taupe">
+                    <div className="flex items-center space-x-1">
+                      <User className="w-4 h-4" />
+                      <span>{post.author}</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <Calendar className="w-4 h-4" />
+                      <span>{formatDate(post.publishedAt)}</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <Clock className="w-4 h-4" />
+                      <span>{post.readTime}</span>
+                    </div>
+                    {post.views && (
+                      <div className="flex items-center space-x-1">
+                        <Eye className="w-4 h-4" />
+                        <span>{formatNumber(post.views)}</span>
+                      </div>
+                    )}
+                    {post.comments && (
+                      <div className="flex items-center space-x-1">
+                        <MessageCircle className="w-4 h-4" />
+                        <span>{post.comments}</span>
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="flex items-center justify-between pt-3 border-t border-neo-taupe/20">
+                    <div className="flex flex-wrap gap-2">
+                      {post.tags.slice(0, 3).map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-xs bg-neo-dark text-neo-gold px-2 py-1 rounded-full shadow-neo-pressed"
+                        >
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="flex items-center space-x-1 text-neo-gold hover:text-neo-champagne transition-colors"
+                    >
+                      <span>Read More</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
+            </NeoCard>
           </motion.article>
         ))}
       </motion.div>
@@ -245,121 +248,126 @@ export function BlogPreview({ limit = 3, showFeatured = true, layout = 'grid' }:
           <motion.article
             key={post.id}
             variants={itemVariants}
-            className="card overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 group"
           >
-            {/* Image */}
-            <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 relative">
-              {/* Featured Badge */}
-              {post.featured && (
-                <div className="absolute top-4 left-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full z-10">
-                  Featured
-                </div>
-              )}
-
-              {/* Category Badge */}
-              <div className="absolute top-4 right-4 bg-dark/80 backdrop-blur-sm text-accent text-xs px-3 py-1 rounded-full">
-                {post.category}
-              </div>
-
-              {/* Image Placeholder */}
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="text-center">
-                  <Tag className="w-12 h-12 text-primary/50 mx-auto mb-2" />
-                  <p className="text-primary/50 text-sm">{post.title}</p>
-                </div>
-              </div>
-
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-dark/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-4 left-4 right-4">
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="btn-primary w-full flex items-center justify-center space-x-2"
-                  >
-                    <span>Read Article</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="p-6 space-y-4">
-              <div>
-                <h3 className="text-lg font-semibold text-accent group-hover:text-primary transition-colors mb-2 line-clamp-2">
-                  <Link href={`/blog/${post.slug}`}>
-                    {post.title}
-                  </Link>
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
-                  {post.excerpt}
-                </p>
-              </div>
-
-              {/* Meta Information */}
-              <div className="space-y-3">
-                <div className="flex items-center justify-between text-xs text-muted-foreground">
-                  <div className="flex items-center space-x-1">
-                    <User className="w-3 h-3" />
-                    <span>{post.author}</span>
+            <NeoCard variant="elevated" className="overflow-hidden hover:shadow-neo-elevated-hover transition-all duration-300 hover:-translate-y-1 group h-full flex flex-col">
+              {/* Image */}
+              <div className="aspect-video bg-neo-dark shadow-neo-pressed relative">
+                {/* Featured Badge */}
+                {post.featured && (
+                  <div className="absolute top-4 left-4 bg-neo-gold text-neo-dark text-xs font-bold px-3 py-1.5 rounded-full z-10 shadow-neo-flat">
+                    Featured
                   </div>
-                  <div className="flex items-center space-x-1">
-                    <Clock className="w-3 h-3" />
-                    <span>{post.readTime}</span>
-                  </div>
-                </div>
-
-                <div className="flex items-center justify-between text-xs">
-                  <div className="flex items-center space-x-1 text-muted-foreground">
-                    <Calendar className="w-3 h-3" />
-                    <span>{formatDate(post.publishedAt)}</span>
-                  </div>
-                  <div className="flex items-center space-x-3 text-muted-foreground">
-                    {post.views && (
-                      <div className="flex items-center space-x-1">
-                        <Eye className="w-3 h-3" />
-                        <span>{formatNumber(post.views)}</span>
-                      </div>
-                    )}
-                    {post.comments && (
-                      <div className="flex items-center space-x-1">
-                        <MessageCircle className="w-3 h-3" />
-                        <span>{post.comments}</span>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2">
-                {post.tags.slice(0, 2).map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full"
-                  >
-                    #{tag}
-                  </span>
-                ))}
-                {post.tags.length > 2 && (
-                  <span className="text-xs text-muted-foreground">
-                    +{post.tags.length - 2} more
-                  </span>
                 )}
+
+                {/* Category Badge */}
+                <div className="absolute top-4 right-4 bg-neo-steel/90 backdrop-blur-sm text-neo-champagne text-xs px-3 py-1.5 rounded-full shadow-neo-flat">
+                  {post.category}
+                </div>
+
+                {/* Image Placeholder */}
+                <div className="w-full h-full flex items-center justify-center">
+                  <div className="text-center">
+                    <Tag className="w-12 h-12 text-neo-gold/50 mx-auto mb-2" />
+                    <p className="text-neo-gold/50 text-sm px-4 line-clamp-2">{post.title}</p>
+                  </div>
+                </div>
+
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-neo-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <Link href={`/blog/${post.slug}`}>
+                      <NeoButton
+                        variant="gold"
+                        fullWidth
+                        icon={<ArrowRight className="w-4 h-4" />}
+                      >
+                        Read Article
+                      </NeoButton>
+                    </Link>
+                  </div>
+                </div>
               </div>
-            </div>
+
+              {/* Content */}
+              <div className="p-6 space-y-4 flex-1 flex flex-col">
+                <div className="flex-1">
+                  <h3 className="text-lg font-playfair font-semibold text-neo-champagne group-hover:text-neo-gold transition-colors mb-2 line-clamp-2">
+                    <Link href={`/blog/${post.slug}`}>
+                      {post.title}
+                    </Link>
+                  </h3>
+                  <p className="text-neo-taupe text-sm leading-relaxed line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                </div>
+
+                {/* Meta Information */}
+                <div className="space-y-3 pt-3 border-t border-neo-taupe/20">
+                  <div className="flex items-center justify-between text-xs text-neo-taupe">
+                    <div className="flex items-center space-x-1">
+                      <User className="w-3 h-3" />
+                      <span>{post.author}</span>
+                    </div>
+                    <div className="flex items-center space-x-1">
+                      <Clock className="w-3 h-3" />
+                      <span>{post.readTime}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between text-xs">
+                    <div className="flex items-center space-x-1 text-neo-taupe">
+                      <Calendar className="w-3 h-3" />
+                      <span>{formatDate(post.publishedAt)}</span>
+                    </div>
+                    <div className="flex items-center space-x-3 text-neo-taupe">
+                      {post.views && (
+                        <div className="flex items-center space-x-1">
+                          <Eye className="w-3 h-3" />
+                          <span>{formatNumber(post.views)}</span>
+                        </div>
+                      )}
+                      {post.comments && (
+                        <div className="flex items-center space-x-1">
+                          <MessageCircle className="w-3 h-3" />
+                          <span>{post.comments}</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2">
+                  {post.tags.slice(0, 2).map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs bg-neo-dark text-neo-gold px-2 py-1 rounded-full shadow-neo-pressed"
+                    >
+                      #{tag}
+                    </span>
+                  ))}
+                  {post.tags.length > 2 && (
+                    <span className="text-xs text-neo-taupe">
+                      +{post.tags.length - 2} more
+                    </span>
+                  )}
+                </div>
+              </div>
+            </NeoCard>
           </motion.article>
         ))}
       </div>
 
       {/* View All Blog Posts */}
       <div className="text-center mt-12">
-        <Link
-          href="/blog"
-          className="btn-outline inline-flex items-center space-x-2"
-        >
-          <span>View All Articles</span>
-          <ArrowRight className="w-4 h-4" />
+        <Link href="/blog">
+          <NeoButton
+            variant="secondary"
+            size="lg"
+            icon={<ArrowRight className="w-4 h-4" />}
+          >
+            View All Articles
+          </NeoButton>
         </Link>
       </div>
     </motion.div>

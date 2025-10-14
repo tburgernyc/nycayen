@@ -3,6 +3,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Cookie, X, Settings, Shield, Eye } from "lucide-react";
+import { NeoCard } from "./ui/NeoCard";
+import { NeoButton } from "./ui/NeoButton";
+import { NeoIconButton } from "./ui/NeoIconButton";
 
 export function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
@@ -140,21 +143,21 @@ export function CookieBanner() {
         className="fixed bottom-0 left-0 right-0 z-50 p-4"
       >
         <div className="max-w-6xl mx-auto">
-          <div className="bg-dark/95 backdrop-blur-md border border-primary/20 rounded-xl shadow-2xl overflow-hidden">
+          <NeoCard variant="elevated" className="overflow-hidden shadow-neo-high">
             {!showSettings ? (
               /* Main Cookie Banner */
               <div className="p-6">
                 <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6">
                   {/* Icon and Title */}
                   <div className="flex items-start space-x-3 flex-shrink-0">
-                    <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                      <Cookie className="w-6 h-6 text-primary" />
+                    <div className="w-12 h-12 bg-neo-dark shadow-neo-pressed rounded-full flex items-center justify-center">
+                      <Cookie className="w-6 h-6 text-neo-gold" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-accent mb-1">
+                      <h3 className="font-playfair font-semibold text-neo-champagne mb-1">
                         Cookie Preferences
                       </h3>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-neo-taupe">
                         We respect your privacy
                       </p>
                     </div>
@@ -162,13 +165,13 @@ export function CookieBanner() {
 
                   {/* Content */}
                   <div className="flex-1 space-y-4">
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      We use cookies to enhance your browsing experience, serve personalized content, 
-                      and analyze our traffic. By clicking &ldquo;Accept All&rdquo;, you consent to our use of cookies. 
+                    <p className="text-sm text-neo-taupe leading-relaxed">
+                      We use cookies to enhance your browsing experience, serve personalized content,
+                      and analyze our traffic. By clicking &ldquo;Accept All&rdquo;, you consent to our use of cookies.
                       You can manage your preferences or learn more in our{" "}
-                      <a 
-                        href="/privacy-policy" 
-                        className="text-primary hover:text-primary/80 underline"
+                      <a
+                        href="/privacy-policy"
+                        className="text-neo-gold hover:text-neo-champagne underline"
                       >
                         Privacy Policy
                       </a>.
@@ -176,35 +179,39 @@ export function CookieBanner() {
 
                     {/* Action Buttons */}
                     <div className="flex flex-col sm:flex-row gap-3">
-                      <button
+                      <NeoButton
                         onClick={handleAcceptAll}
-                        className="btn-primary px-6 py-2 text-sm"
+                        variant="gold"
+                        size="sm"
                       >
                         Accept All
-                      </button>
-                      <button
+                      </NeoButton>
+                      <NeoButton
                         onClick={handleDeclineAll}
-                        className="btn-outline px-6 py-2 text-sm"
+                        variant="secondary"
+                        size="sm"
                       >
                         Essential Only
-                      </button>
-                      <button
+                      </NeoButton>
+                      <NeoButton
                         onClick={() => setShowSettings(true)}
-                        className="text-sm text-primary hover:text-primary/80 transition-colors px-6 py-2 border border-primary/20 rounded-lg hover:border-primary/40"
+                        variant="flat"
+                        size="sm"
                       >
                         Customize
-                      </button>
+                      </NeoButton>
                     </div>
                   </div>
 
                   {/* Close Button */}
-                  <button
-                    onClick={handleDeclineAll}
-                    className="text-muted-foreground hover:text-accent transition-colors p-2 flex-shrink-0"
-                    aria-label="Close"
-                  >
-                    <X className="w-5 h-5" />
-                  </button>
+                  <div className="flex-shrink-0">
+                    <NeoIconButton
+                      onClick={handleDeclineAll}
+                      variant="flat"
+                      icon={<X className="w-5 h-5" />}
+                      aria-label="Close"
+                    />
+                  </div>
                 </div>
               </div>
             ) : (
@@ -212,17 +219,16 @@ export function CookieBanner() {
               <div className="p-6">
                 <div className="mb-6">
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-semibold text-accent">
+                    <h3 className="text-lg font-playfair font-semibold text-neo-champagne">
                       Cookie Preferences
                     </h3>
-                    <button
+                    <NeoIconButton
                       onClick={() => setShowSettings(false)}
-                      className="text-muted-foreground hover:text-accent transition-colors p-1"
-                    >
-                      <X className="w-5 h-5" />
-                    </button>
+                      variant="flat"
+                      icon={<X className="w-5 h-5" />}
+                    />
                   </div>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-neo-taupe">
                     Choose which cookies you want to accept. You can change these settings at any time.
                   </p>
                 </div>
@@ -232,19 +238,19 @@ export function CookieBanner() {
                   {cookieTypes.map((type) => {
                     const Icon = type.icon;
                     const isEnabled = preferences[type.id as keyof typeof preferences];
-                    
+
                     return (
                       <div
                         key={type.id}
-                        className="flex items-start space-x-4 p-4 bg-primary/5 rounded-lg"
+                        className="flex items-start space-x-4 p-4 bg-neo-dark shadow-neo-pressed rounded-neo-md"
                       >
-                        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Icon className="w-5 h-5 text-primary" />
+                        <div className="w-10 h-10 bg-neo-dark shadow-neo-pressed rounded-neo-sm flex items-center justify-center flex-shrink-0">
+                          <Icon className="w-5 h-5 text-neo-gold" />
                         </div>
-                        
+
                         <div className="flex-1">
                           <div className="flex items-center justify-between mb-2">
-                            <h4 className="font-medium text-accent">{type.name}</h4>
+                            <h4 className="font-medium text-neo-champagne">{type.name}</h4>
                             <label className="relative inline-flex items-center cursor-pointer">
                               <input
                                 type="checkbox"
@@ -253,20 +259,20 @@ export function CookieBanner() {
                                 disabled={type.required}
                                 className="sr-only peer"
                               />
-                              <div className={`relative w-11 h-6 rounded-full transition-colors ${
-                                isEnabled ? 'bg-primary' : 'bg-gray-600'
-                              } ${type.required ? 'opacity-50 cursor-not-allowed' : 'peer-focus:ring-4 peer-focus:ring-primary/20'}`}>
-                                <div className={`absolute top-[2px] left-[2px] w-5 h-5 bg-white rounded-full transition-transform ${
+                              <div className={`relative w-11 h-6 rounded-full transition-colors shadow-neo-pressed ${
+                                isEnabled ? 'bg-neo-gold' : 'bg-neo-taupe/30'
+                              } ${type.required ? 'opacity-50 cursor-not-allowed' : 'peer-focus:ring-4 peer-focus:ring-neo-gold/20'}`}>
+                                <div className={`absolute top-[2px] left-[2px] w-5 h-5 bg-neo-champagne rounded-full transition-transform shadow-neo-flat ${
                                   isEnabled ? 'translate-x-5' : 'translate-x-0'
                                 }`}></div>
                               </div>
                             </label>
                           </div>
-                          <p className="text-sm text-muted-foreground">
+                          <p className="text-sm text-neo-taupe">
                             {type.description}
                           </p>
                           {type.required && (
-                            <p className="text-xs text-primary mt-1">Required</p>
+                            <p className="text-xs text-neo-gold mt-1">Required</p>
                           )}
                         </div>
                       </div>
@@ -276,28 +282,31 @@ export function CookieBanner() {
 
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <button
+                  <NeoButton
                     onClick={handleAcceptSelected}
-                    className="btn-primary px-6 py-2 text-sm"
+                    variant="gold"
+                    size="sm"
                   >
                     Save Preferences
-                  </button>
-                  <button
+                  </NeoButton>
+                  <NeoButton
                     onClick={handleAcceptAll}
-                    className="btn-outline px-6 py-2 text-sm"
+                    variant="secondary"
+                    size="sm"
                   >
                     Accept All
-                  </button>
-                  <button
+                  </NeoButton>
+                  <NeoButton
                     onClick={() => setShowSettings(false)}
-                    className="text-sm text-muted-foreground hover:text-accent transition-colors px-6 py-2"
+                    variant="flat"
+                    size="sm"
                   >
                     Cancel
-                  </button>
+                  </NeoButton>
                 </div>
               </div>
             )}
-          </div>
+          </NeoCard>
         </div>
       </motion.div>
     </AnimatePresence>

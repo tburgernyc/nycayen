@@ -3,6 +3,9 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Calendar, Clock, User, Phone, Mail, MessageSquare, ExternalLink } from "lucide-react";
+import { NeoCard } from "./ui/NeoCard";
+import { NeoButton } from "./ui/NeoButton";
+import { NeoInput } from "./ui/NeoInput";
 
 interface BookingWidgetProps {
   preselectedService?: string;
@@ -101,10 +104,10 @@ export function BookingWidget({ preselectedService, className = "" }: BookingWid
     <div className={`max-w-4xl mx-auto ${className}`}>
       {/* Header */}
       <div className="text-center mb-8">
-        <h3 className="text-2xl md:text-3xl font-playfair font-bold text-primary mb-4">
+        <h3 className="text-2xl md:text-3xl font-playfair font-bold text-neo-gold mb-4">
           Book Your Appointment
         </h3>
-        <p className="text-muted-foreground max-w-2xl mx-auto">
+        <p className="text-neo-taupe max-w-2xl mx-auto">
           Ready to transform your look? Schedule your personalized consultation and styling session with our expert team.
         </p>
       </div>
@@ -119,70 +122,72 @@ export function BookingWidget({ preselectedService, className = "" }: BookingWid
         >
           {/* Calendly Integration */}
           {calendlyUrl && !showFallbackForm && (
-            <div className="card p-6">
+            <NeoCard variant="elevated" className="p-6">
               <div className="text-center space-y-4">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
-                  <Calendar className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 bg-neo-dark shadow-neo-pressed rounded-full flex items-center justify-center mx-auto">
+                  <Calendar className="w-8 h-8 text-neo-gold" />
                 </div>
-                <h4 className="text-xl font-semibold text-accent">
+                <h4 className="text-xl font-playfair font-semibold text-neo-champagne">
                   Quick Online Booking
                 </h4>
-                <p className="text-muted-foreground">
+                <p className="text-neo-taupe">
                   Book instantly using our online calendar. Choose your preferred date and time.
                 </p>
-                <button
+                <NeoButton
+                  variant="gold"
+                  fullWidth
                   onClick={openCalendly}
-                  className="btn-primary w-full flex items-center justify-center space-x-2"
+                  icon={<ExternalLink className="w-4 h-4" />}
                 >
                   <Calendar className="w-5 h-5" />
                   <span>Open Booking Calendar</span>
-                  <ExternalLink className="w-4 h-4" />
-                </button>
+                </NeoButton>
               </div>
-            </div>
+            </NeoCard>
           )}
 
           {/* Fallback Contact Options */}
-          <div className="card p-6">
-            <h4 className="text-xl font-semibold text-accent mb-4">
+          <NeoCard variant="elevated" className="p-6">
+            <h4 className="text-xl font-playfair font-semibold text-neo-champagne mb-4">
               Other Ways to Book
             </h4>
             <div className="space-y-4">
-              <div className="flex items-center space-x-4 p-4 bg-primary/5 rounded-lg">
-                <Phone className="w-6 h-6 text-primary flex-shrink-0" />
+              <div className="flex items-center space-x-4 p-4 bg-neo-dark shadow-neo-pressed rounded-neo-md">
+                <Phone className="w-6 h-6 text-neo-gold flex-shrink-0" />
                 <div>
-                  <p className="font-medium text-accent">Call Us</p>
+                  <p className="font-medium text-neo-champagne">Call Us</p>
                   <a
                     href={`tel:${process.env.NEXT_PUBLIC_BUSINESS_PHONE || "+1-555-123-4567"}`}
-                    className="text-primary hover:text-primary/80 transition-colors"
+                    className="text-neo-gold hover:text-neo-champagne transition-colors"
                   >
                     {process.env.NEXT_PUBLIC_BUSINESS_PHONE || "+1 (555) 123-4567"}
                   </a>
                 </div>
               </div>
-              
-              <div className="flex items-center space-x-4 p-4 bg-primary/5 rounded-lg">
-                <Mail className="w-6 h-6 text-primary flex-shrink-0" />
+
+              <div className="flex items-center space-x-4 p-4 bg-neo-dark shadow-neo-pressed rounded-neo-md">
+                <Mail className="w-6 h-6 text-neo-gold flex-shrink-0" />
                 <div>
-                  <p className="font-medium text-accent">Email Us</p>
+                  <p className="font-medium text-neo-champagne">Email Us</p>
                   <a
                     href={`mailto:${process.env.NEXT_PUBLIC_BUSINESS_EMAIL || "info@nycayen.com"}`}
-                    className="text-primary hover:text-primary/80 transition-colors"
+                    className="text-neo-gold hover:text-neo-champagne transition-colors"
                   >
                     {process.env.NEXT_PUBLIC_BUSINESS_EMAIL || "info@nycayen.com"}
                   </a>
                 </div>
               </div>
 
-              <button
+              <NeoButton
+                variant="secondary"
+                fullWidth
                 onClick={() => setShowFallbackForm(true)}
-                className="btn-outline w-full flex items-center justify-center space-x-2"
+                icon={<MessageSquare className="w-5 h-5" />}
               >
-                <MessageSquare className="w-5 h-5" />
-                <span>Fill Out Booking Form</span>
-              </button>
+                Fill Out Booking Form
+              </NeoButton>
             </div>
-          </div>
+          </NeoCard>
         </motion.div>
 
         {/* Booking Form */}
@@ -190,79 +195,78 @@ export function BookingWidget({ preselectedService, className = "" }: BookingWid
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className={`card p-6 ${showFallbackForm ? "" : "lg:order-first"}`}
         >
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="flex items-center space-x-3 mb-6">
-              <User className="w-6 h-6 text-primary" />
-              <h4 className="text-xl font-semibold text-accent">
-                Booking Request Form
-              </h4>
-            </div>
+          <NeoCard variant="elevated" className={`p-6 ${showFallbackForm ? "" : "lg:order-first"}`}>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-10 h-10 bg-neo-dark shadow-neo-pressed rounded-full flex items-center justify-center">
+                  <User className="w-5 h-5 text-neo-gold" />
+                </div>
+                <h4 className="text-xl font-playfair font-semibold text-neo-champagne">
+                  Booking Request Form
+                </h4>
+              </div>
 
             {/* Personal Information */}
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-accent mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-neo-champagne mb-2">
                   Full Name *
                 </label>
-                <input
+                <NeoInput
                   type="text"
                   id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-dark/50 border border-primary/20 rounded-lg text-accent placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="Your full name"
                 />
               </div>
-              
+
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-accent mb-2">
+                <label htmlFor="phone" className="block text-sm font-medium text-neo-champagne mb-2">
                   Phone Number *
                 </label>
-                <input
+                <NeoInput
                   type="tel"
                   id="phone"
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-dark/50 border border-primary/20 rounded-lg text-accent placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                   placeholder="Your phone number"
                 />
               </div>
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-accent mb-2">
+              <label htmlFor="email" className="block text-sm font-medium text-neo-champagne mb-2">
                 Email Address *
               </label>
-              <input
+              <NeoInput
                 type="email"
                 id="email"
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
                 required
-                className="w-full px-4 py-3 bg-dark/50 border border-primary/20 rounded-lg text-accent placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                 placeholder="your.email@example.com"
               />
             </div>
 
             {/* Service Selection */}
             <div>
-              <label htmlFor="service" className="block text-sm font-medium text-accent mb-2">
+              <label htmlFor="service" className="block text-sm font-medium text-neo-champagne mb-2">
                 Desired Service *
               </label>
-              <select
+              <NeoInput
+                as="select"
                 id="service"
                 name="service"
                 value={formData.service}
                 onChange={handleInputChange}
                 required
-                className="w-full px-4 py-3 bg-dark/50 border border-primary/20 rounded-lg text-accent focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               >
                 <option value="">Select a service</option>
                 {services.map((service) => (
@@ -270,36 +274,35 @@ export function BookingWidget({ preselectedService, className = "" }: BookingWid
                     {service}
                   </option>
                 ))}
-              </select>
+              </NeoInput>
             </div>
 
             {/* Preferred Date & Time */}
             <div className="grid md:grid-cols-2 gap-4">
               <div>
-                <label htmlFor="preferredDate" className="block text-sm font-medium text-accent mb-2">
+                <label htmlFor="preferredDate" className="block text-sm font-medium text-neo-champagne mb-2">
                   Preferred Date
                 </label>
-                <input
+                <NeoInput
                   type="date"
                   id="preferredDate"
                   name="preferredDate"
                   value={formData.preferredDate}
                   onChange={handleInputChange}
                   min={new Date().toISOString().split('T')[0]}
-                  className="w-full px-4 py-3 bg-dark/50 border border-primary/20 rounded-lg text-accent focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                 />
               </div>
-              
+
               <div>
-                <label htmlFor="preferredTime" className="block text-sm font-medium text-accent mb-2">
+                <label htmlFor="preferredTime" className="block text-sm font-medium text-neo-champagne mb-2">
                   Preferred Time
                 </label>
-                <select
+                <NeoInput
+                  as="select"
                   id="preferredTime"
                   name="preferredTime"
                   value={formData.preferredTime}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-dark/50 border border-primary/20 rounded-lg text-accent focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                 >
                   <option value="">Select time</option>
                   {timeSlots.map((time) => (
@@ -307,39 +310,41 @@ export function BookingWidget({ preselectedService, className = "" }: BookingWid
                       {time}
                     </option>
                   ))}
-                </select>
+                </NeoInput>
               </div>
             </div>
 
             {/* Additional Message */}
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-accent mb-2">
+              <label htmlFor="message" className="block text-sm font-medium text-neo-champagne mb-2">
                 Additional Information
               </label>
-              <textarea
+              <NeoInput
+                as="textarea"
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleInputChange}
                 rows={4}
-                className="w-full px-4 py-3 bg-dark/50 border border-primary/20 rounded-lg text-accent placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
                 placeholder="Tell us about your hair goals, any concerns, or special requests..."
               />
             </div>
 
             {/* Submit Button */}
-            <button
+            <NeoButton
               type="submit"
-              className="btn-primary w-full flex items-center justify-center space-x-2"
+              variant="gold"
+              fullWidth
+              icon={<Calendar className="w-5 h-5" />}
             >
-              <Calendar className="w-5 h-5" />
-              <span>Submit Booking Request</span>
-            </button>
+              Submit Booking Request
+            </NeoButton>
 
-            <p className="text-sm text-muted-foreground text-center">
+            <p className="text-sm text-neo-taupe text-center">
               We&apos;ll contact you within 24 hours to confirm your appointment details.
             </p>
           </form>
+          </NeoCard>
         </motion.div>
       </div>
 
@@ -350,34 +355,34 @@ export function BookingWidget({ preselectedService, className = "" }: BookingWid
         transition={{ duration: 0.5, delay: 0.4 }}
         className="mt-12 text-center"
       >
-        <div className="card p-6 max-w-2xl mx-auto">
-          <h4 className="text-lg font-semibold text-accent mb-4 flex items-center justify-center space-x-2">
-            <Clock className="w-5 h-5 text-primary" />
+        <NeoCard variant="flat" className="p-6 max-w-2xl mx-auto">
+          <h4 className="text-lg font-playfair font-semibold text-neo-champagne mb-4 flex items-center justify-center space-x-2">
+            <Clock className="w-5 h-5 text-neo-gold" />
             <span>Business Hours</span>
           </h4>
           <div className="grid md:grid-cols-2 gap-4 text-sm">
             <div className="space-y-2">
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Monday - Friday</span>
-                <span className="text-accent">9:00 AM - 7:00 PM</span>
+                <span className="text-neo-taupe">Monday - Friday</span>
+                <span className="text-neo-champagne">9:00 AM - 7:00 PM</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Saturday</span>
-                <span className="text-accent">9:00 AM - 6:00 PM</span>
+                <span className="text-neo-taupe">Saturday</span>
+                <span className="text-neo-champagne">9:00 AM - 6:00 PM</span>
               </div>
             </div>
             <div className="space-y-2">
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Sunday</span>
-                <span className="text-accent">10:00 AM - 5:00 PM</span>
+                <span className="text-neo-taupe">Sunday</span>
+                <span className="text-neo-champagne">10:00 AM - 5:00 PM</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-muted-foreground">Holidays</span>
-                <span className="text-accent">By Appointment</span>
+                <span className="text-neo-taupe">Holidays</span>
+                <span className="text-neo-champagne">By Appointment</span>
               </div>
             </div>
           </div>
-        </div>
+        </NeoCard>
       </motion.div>
     </div>
   );

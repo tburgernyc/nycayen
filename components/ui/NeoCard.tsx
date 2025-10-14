@@ -1,7 +1,7 @@
 "use client";
 
 import { forwardRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, HTMLMotionProps } from 'framer-motion';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils/cn';
 
@@ -163,18 +163,22 @@ export const NeoCard = forwardRef<HTMLDivElement, NeoCardProps>(
     const CardComponent = animate ? motion.div : 'div';
     const motionProps = animate
       ? {
-          initial: 'hidden',
-          animate: 'visible',
+          initial: 'hidden' as const,
+          animate: 'visible' as const,
           variants: animationVariants,
         }
       : {};
+
+    // Type-safe props spreading
+    const componentProps = animate
+      ? ({ ...motionProps, ...props } as HTMLMotionProps<"div">)
+      : props;
 
     return (
       <CardComponent
         ref={ref}
         className={cn(neoCardVariants({ variant, padding, hover, interactive, className }))}
-        {...motionProps}
-        {...props}
+        {...componentProps}
       >
         {/* Header section */}
         {header && (

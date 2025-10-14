@@ -73,16 +73,16 @@ export default function AboutPage() {
 
   if (!mounted) {
     return (
-      <div className="min-h-screen bg-dark flex items-center justify-center">
-        <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+      <div className="min-h-screen bg-neo-black flex items-center justify-center">
+        <div className="w-16 h-16 border-4 border-neo-khaki border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-dark">
+    <div className="min-h-screen bg-neo-black">
       {/* Hero Section */}
-      <section className="py-20 lg:py-32 bg-gradient-to-b from-dark to-muted/20">
+      <section className="py-20 lg:py-32 bg-gradient-to-b from-neo-black to-neo-gunmetal/20">
         <div className="container mx-auto px-4">
           <motion.div
             initial="hidden"

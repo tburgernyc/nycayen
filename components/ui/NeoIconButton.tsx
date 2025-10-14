@@ -1,7 +1,7 @@
 "use client";
 
 import { forwardRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, HTMLMotionProps } from 'framer-motion';
 import { Loader2 } from 'lucide-react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/utils/cn';
@@ -161,6 +161,9 @@ export const NeoIconButton = forwardRef<HTMLButtonElement, NeoIconButtonProps>(
       );
     }
 
+    // Type-safe props for motion.button
+    const motionProps = props as HTMLMotionProps<"button">;
+
     return (
       <motion.button
         ref={ref}
@@ -168,10 +171,10 @@ export const NeoIconButton = forwardRef<HTMLButtonElement, NeoIconButtonProps>(
         disabled={isDisabled}
         aria-label={ariaLabel}
         // Framer Motion animation variants
-        whileHover={!isDisabled ? { scale: variant === 'elevated' || variant === 'gold' ? 1.05 : 1.02 } : {}}
-        whileTap={!isDisabled ? { scale: 0.95 } : {}}
+        whileHover={!isDisabled ? { scale: variant === 'elevated' || variant === 'gold' ? 1.05 : 1.02 } : undefined}
+        whileTap={!isDisabled ? { scale: 0.95 } : undefined}
         transition={{ duration: 0.2, ease: 'easeInOut' }}
-        {...props}
+        {...motionProps}
       >
         {isLoading ? spinner : icon}
       </motion.button>

@@ -1,7 +1,7 @@
 "use client";
 
 import { forwardRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, HTMLMotionProps } from 'framer-motion';
 import { Loader2 } from 'lucide-react';
 import { cn } from '@/utils/cn';
 
@@ -102,6 +102,9 @@ export const NeoCTAButton = forwardRef<HTMLButtonElement, NeoCTAButtonProps>(
       <Loader2 className="h-5 w-5 animate-spin" aria-hidden="true" />
     );
 
+    // Type-safe props for motion.button
+    const motionProps = props as HTMLMotionProps<"button">;
+
     return (
       <motion.button
         ref={ref}
@@ -124,13 +127,13 @@ export const NeoCTAButton = forwardRef<HTMLButtonElement, NeoCTAButtonProps>(
         whileHover={!isDisabled ? {
           scale: 1.05,
           boxShadow: "0 0 30px rgba(197, 164, 109, 0.5), 12px 12px 24px rgba(0,0,0,0.7), -12px -12px 24px rgba(59,59,59,0.2)"
-        } : {}}
-        whileTap={!isDisabled ? { scale: 0.95 } : {}}
+        } : undefined}
+        whileTap={!isDisabled ? { scale: 0.95 } : undefined}
         transition={{
           duration: 0.2,
           ease: 'easeInOut'
         }}
-        {...props}
+        {...motionProps}
       >
         {/* Leading icon or spinner */}
         {isLoading && iconPosition === 'leading' && (

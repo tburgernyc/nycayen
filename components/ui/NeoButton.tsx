@@ -59,7 +59,7 @@ const neoButtonVariants = cva(
  * Extends HTML button attributes for full compatibility
  */
 export interface NeoButtonProps
-  extends Omit<HTMLMotionProps<"button">, "ref">,
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof neoButtonVariants> {
   /**
    * Icon to display in the button
@@ -143,6 +143,9 @@ export const NeoButton = forwardRef<HTMLButtonElement, NeoButtonProps>(
       <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
     );
 
+    // Type-safe props for motion.button
+    const motionProps = props as HTMLMotionProps<"button">;
+
     return (
       <motion.button
         ref={ref}
@@ -152,7 +155,7 @@ export const NeoButton = forwardRef<HTMLButtonElement, NeoButtonProps>(
         whileHover={!isDisabled ? { scale: variant === 'elevated' || variant === 'gold' ? 1.05 : 1.02 } : undefined}
         whileTap={!isDisabled ? { scale: 0.95 } : undefined}
         transition={{ duration: 0.2, ease: 'easeInOut' }}
-        {...props}
+        {...motionProps}
       >
         {/* Leading icon or spinner */}
         {isLoading && iconPosition === 'leading' && (

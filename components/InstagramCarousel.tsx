@@ -30,9 +30,9 @@ export function InstagramCarousel() {
     {
       id: '1',
       type: 'video',
-      media_url: '/images/instagram/transformation1.jpg',
+      media_url: 'https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600&h=600&fit=crop',
       caption: '✨ Another stunning transformation! From dull to dazzling ✨ #HairTransformation #NycayenMagic',
-      permalink: 'https://instagram.com/p/example1',
+      permalink: 'https://instagram.com/nycayenmoore',
       timestamp: new Date().toISOString(),
       like_count: 245,
       comments_count: 18,
@@ -40,9 +40,9 @@ export function InstagramCarousel() {
     {
       id: '2',
       type: 'image',
-      media_url: '/images/instagram/style2.jpg',
+      media_url: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=600&fit=crop',
       caption: '💫 Loving this gorgeous balayage! Perfect for the fall season 🍂 #Balayage #HairGoals',
-      permalink: 'https://instagram.com/p/example2',
+      permalink: 'https://instagram.com/nycayenmoore',
       timestamp: new Date().toISOString(),
       like_count: 189,
       comments_count: 12,
@@ -50,9 +50,9 @@ export function InstagramCarousel() {
     {
       id: '3',
       type: 'carousel',
-      media_url: '/images/instagram/before-after.jpg',
+      media_url: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&h=600&fit=crop',
       caption: '🔥 Before & After magic! Swipe to see the incredible transformation ➡️ #BeforeAndAfter #Confidence',
-      permalink: 'https://instagram.com/p/example3',
+      permalink: 'https://instagram.com/nycayenmoore',
       timestamp: new Date().toISOString(),
       like_count: 312,
       comments_count: 24,
@@ -60,9 +60,9 @@ export function InstagramCarousel() {
     {
       id: '4',
       type: 'video',
-      media_url: '/images/instagram/technique.jpg',
+      media_url: 'https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&h=600&fit=crop',
       caption: '🎥 Behind the scenes: Watch the technique that creates these stunning curls! #BehindTheScenes #HairTutorial',
-      permalink: 'https://instagram.com/p/example4',
+      permalink: 'https://instagram.com/nycayenmoore',
       timestamp: new Date().toISOString(),
       like_count: 156,
       comments_count: 8,
@@ -70,9 +70,9 @@ export function InstagramCarousel() {
     {
       id: '5',
       type: 'image',
-      media_url: '/images/instagram/client-love.jpg',
+      media_url: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=600&fit=crop&crop=entropy',
       caption: '❤️ Client love! Nothing makes us happier than seeing our clients glow with confidence ✨ #ClientLove #Confidence',
-      permalink: 'https://instagram.com/p/example5',
+      permalink: 'https://instagram.com/nycayenmoore',
       timestamp: new Date().toISOString(),
       like_count: 201,
       comments_count: 15,
@@ -184,9 +184,11 @@ export function InstagramCarousel() {
                         </div>
                       </div>
                     )}
-                    <div className="w-full h-full flex items-center justify-center">
-                      <Instagram className="w-16 h-16 text-neo-gold/50" />
-                    </div>
+                    <img
+                      src={posts[currentIndex].thumbnail_url || posts[currentIndex].media_url}
+                      alt={posts[currentIndex].caption}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
 
                   {/* Type Indicator */}

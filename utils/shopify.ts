@@ -72,9 +72,9 @@ class ShopifyClient {
         {
           id: '1',
           title: 'Premium Hair Care Set',
-          description: 'Complete hair care routine with premium products',
+          description: 'Complete hair care routine with shampoo, conditioner, and deep treatment mask from our top-recommended brands.',
           price: '$89.99',
-          image: '/images/products/hair-care-set.jpg',
+          image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=600&fit=crop&crop=top',
           variants: [{
             id: '1',
             title: 'Default',
@@ -85,10 +85,10 @@ class ShopifyClient {
         },
         {
           id: '2',
-          title: 'Styling Tools Collection',
-          description: 'Professional styling tools for perfect results',
+          title: 'Professional Styling Tools',
+          description: 'Salon-grade blow dryer, flat iron, and curling wand set for perfect results at home.',
           price: '$149.99',
-          image: '/images/products/styling-tools.jpg',
+          image: 'https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600&h=600&fit=crop&crop=top',
           variants: [{
             id: '2',
             title: 'Default',
@@ -96,6 +96,62 @@ class ShopifyClient {
             available: true,
           }],
           available: true,
+        },
+        {
+          id: '3',
+          title: 'Balayage Maintenance Kit',
+          description: 'Purple shampoo, toning gloss, and bond-strengthening treatment to keep your color fresh between appointments.',
+          price: '$64.99',
+          image: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&h=600&fit=crop&crop=top',
+          variants: [{
+            id: '3',
+            title: 'Default',
+            price: '$64.99',
+            available: true,
+          }],
+          available: true,
+        },
+        {
+          id: '4',
+          title: 'Keratin Smoothing Treatment',
+          description: 'At-home keratin treatment kit for frizz-free, smooth hair that lasts up to 8 weeks.',
+          price: '$79.99',
+          image: 'https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&h=600&fit=crop&crop=top',
+          variants: [{
+            id: '4',
+            title: 'Default',
+            price: '$79.99',
+            available: true,
+          }],
+          available: true,
+        },
+        {
+          id: '5',
+          title: 'Curl Defining Collection',
+          description: 'Leave-in conditioner, curl cream, and diffuser attachment for bouncy, defined curls.',
+          price: '$54.99',
+          image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=600&fit=crop&crop=entropy',
+          variants: [{
+            id: '5',
+            title: 'Default',
+            price: '$54.99',
+            available: true,
+          }],
+          available: true,
+        },
+        {
+          id: '6',
+          title: 'Scalp Revival Serum',
+          description: 'Nourishing scalp serum with biotin and peptides to promote healthy hair growth and reduce breakage.',
+          price: '$44.99',
+          image: 'https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600&h=600&fit=crop&crop=entropy',
+          variants: [{
+            id: '6',
+            title: 'Default',
+            price: '$44.99',
+            available: false,
+          }],
+          available: false,
         },
       ];
     }

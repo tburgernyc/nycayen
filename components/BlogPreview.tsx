@@ -43,6 +43,7 @@ export function BlogPreview({ limit = 3, showFeatured = true, layout = 'grid' }:
       readTime: "5 min read",
       category: "Hair Care",
       tags: ["winter", "hair care", "tips", "protection"],
+      image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&h=450&fit=crop&crop=top",
       featured: true,
       views: 1247,
       comments: 23,
@@ -57,6 +58,7 @@ export function BlogPreview({ limit = 3, showFeatured = true, layout = 'grid' }:
       readTime: "7 min read",
       category: "Color Techniques",
       tags: ["color correction", "transformation", "techniques"],
+      image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&h=450&fit=crop&crop=top",
       featured: true,
       views: 892,
       comments: 18,
@@ -71,6 +73,7 @@ export function BlogPreview({ limit = 3, showFeatured = true, layout = 'grid' }:
       readTime: "6 min read",
       category: "Styling Guide",
       tags: ["haircut", "face shape", "styling", "guide"],
+      image: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=800&h=450&fit=crop&crop=center",
       views: 654,
       comments: 12,
     },
@@ -84,6 +87,7 @@ export function BlogPreview({ limit = 3, showFeatured = true, layout = 'grid' }:
       readTime: "4 min read",
       category: "Product Reviews",
       tags: ["sustainable", "eco-friendly", "products", "environment"],
+      image: "https://images.unsplash.com/photo-1560869713-7d0a29430803?w=800&h=450&fit=crop&crop=center",
       views: 423,
       comments: 8,
     },
@@ -97,6 +101,7 @@ export function BlogPreview({ limit = 3, showFeatured = true, layout = 'grid' }:
       readTime: "8 min read",
       category: "Bridal",
       tags: ["bridal", "wedding", "trends", "2025"],
+      image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&h=450&fit=crop&crop=entropy",
       featured: true,
       views: 1156,
       comments: 31,
@@ -155,11 +160,18 @@ export function BlogPreview({ limit = 3, showFeatured = true, layout = 'grid' }:
               <div className="flex flex-col md:flex-row gap-6">
                 {/* Image Placeholder */}
                 <div className="md:w-1/3">
-                  <div className="aspect-video bg-neo-dark shadow-neo-pressed rounded-neo-md flex items-center justify-center">
-                    <div className="text-center">
-                      <Tag className="w-8 h-8 text-neo-gold/50 mx-auto mb-2" />
-                      <p className="text-neo-gold/50 text-sm">{post.category}</p>
-                    </div>
+                  <div className="aspect-video bg-neo-dark shadow-neo-pressed rounded-neo-md overflow-hidden">
+                    {post.image ? (
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <Tag className="w-8 h-8 text-neo-gold/50" />
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -264,13 +276,13 @@ export function BlogPreview({ limit = 3, showFeatured = true, layout = 'grid' }:
                   {post.category}
                 </div>
 
-                {/* Image Placeholder */}
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="text-center">
-                    <Tag className="w-12 h-12 text-neo-gold/50 mx-auto mb-2" />
-                    <p className="text-neo-gold/50 text-sm px-4 line-clamp-2">{post.title}</p>
-                  </div>
-                </div>
+                {post.image && (
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                )}
 
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-neo-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">

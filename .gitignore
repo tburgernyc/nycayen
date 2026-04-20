@@ -98,3 +98,6 @@ task-master.config.json
 
 # Git worktrees
 .worktrees/
+
+# Large media files
+public/videos/*.mp4

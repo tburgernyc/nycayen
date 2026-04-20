@@ -169,6 +169,73 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Meet Your Stylist */}
+      <section className="py-20 bg-dark">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+            className="max-w-5xl mx-auto"
+          >
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <motion.div variants={itemVariants} className="relative">
+                <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
+                  <img
+                    src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600&h=800&fit=crop&crop=top"
+                    alt="Nycayen — Master Hair Stylist"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-4 -right-4 bg-primary text-primary-foreground px-6 py-3 rounded-xl shadow-lg">
+                  <p className="text-sm font-semibold">5+ Years</p>
+                  <p className="text-xs opacity-80">Master Stylist</p>
+                </div>
+              </motion.div>
+
+              <motion.div variants={itemVariants} className="space-y-6">
+                <div>
+                  <h2 className="text-4xl md:text-5xl font-cormorant font-bold text-primary mb-2">
+                    Meet Nycayen
+                  </h2>
+                  <p className="text-lg text-muted-foreground italic">Master Hair Stylist &amp; Founder</p>
+                </div>
+
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  With over 5 years of experience transforming hair and boosting confidence,
+                  Nycayen brings a unique blend of technical mastery and artistic vision to every
+                  appointment. Trained in the latest color techniques, cutting methods, and
+                  treatments, she treats every client&apos;s hair as a canvas for her art.
+                </p>
+
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Her philosophy is simple: when you look good, you feel unstoppable. Whether
+                  it&apos;s a dramatic transformation or a subtle refresh, Nycayen tailors every
+                  service to your unique lifestyle and goals.
+                </p>
+
+                <div className="grid grid-cols-2 gap-4 pt-4">
+                  {certifications.slice(0, 4).map((cert, index) => (
+                    <div key={index} className="flex items-start space-x-2">
+                      <Scissors className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
+                      <span className="text-sm text-muted-foreground">{cert}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <Link
+                  href="/booking"
+                  className="inline-flex items-center space-x-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+                >
+                  <span>Book With Nycayen</span>
+                </Link>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Values Section */}
       <section className="py-20 bg-gradient-to-b from-dark to-muted/20">
         <div className="container mx-auto px-4">

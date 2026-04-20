@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { SlidersHorizontal as Filter, Grid, List, Search, Eye, Heart, Share2, Calendar } from "lucide-react";
+import { SlidersHorizontal as Filter, Grid, List, Search, Heart, Share2, Calendar } from "lucide-react";
 
 interface PortfolioItem {
   id: string;
@@ -42,8 +42,8 @@ export function PortfolioGrid({
       id: "1",
       title: "Dramatic Color Transformation",
       category: "coloring",
-      image: "/images/portfolio/transformation1.jpg",
-      beforeImage: "/images/portfolio/transformation1-before.jpg",
+      image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=600&fit=crop&crop=top",
+      beforeImage: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&h=600&fit=crop&crop=top",
       description: "Complete hair makeover from brunette to stunning blonde balayage with lowlights for depth and dimension.",
       client: "Sarah M.",
       date: "2024-12-15",
@@ -55,7 +55,7 @@ export function PortfolioGrid({
       id: "2",
       title: "Elegant Wedding Updo",
       category: "special",
-      image: "/images/portfolio/wedding1.jpg",
+      image: "https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600&h=600&fit=crop&crop=top",
       description: "Romantic low bun with soft face-framing pieces and delicate pearl accessories for a garden wedding.",
       client: "Jennifer L.",
       date: "2024-12-10",
@@ -67,7 +67,7 @@ export function PortfolioGrid({
       id: "3",
       title: "Modern Layered Bob",
       category: "cutting",
-      image: "/images/portfolio/bob1.jpg",
+      image: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&h=600&fit=crop&crop=center",
       description: "Chic asymmetrical bob with subtle layers and a sleek finish. Perfect for the busy professional.",
       client: "Maria R.",
       date: "2024-12-08",
@@ -78,8 +78,8 @@ export function PortfolioGrid({
       id: "4",
       title: "Keratin Treatment Results",
       category: "treatments",
-      image: "/images/portfolio/keratin1.jpg",
-      beforeImage: "/images/portfolio/keratin1-before.jpg",
+      image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&h=600&fit=crop&crop=center",
+      beforeImage: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&h=600&fit=crop&crop=faces",
       description: "Frizzy, unmanageable hair transformed to smooth, shiny perfection with our premium keratin treatment.",
       client: "Amanda K.",
       date: "2024-12-05",
@@ -90,7 +90,7 @@ export function PortfolioGrid({
       id: "5",
       title: "Sunset Balayage",
       category: "coloring",
-      image: "/images/portfolio/balayage1.jpg",
+      image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=600&fit=crop&crop=entropy",
       description: "Warm sunset-inspired balayage with copper and gold tones that complement natural skin tone beautifully.",
       client: "Lisa P.",
       date: "2024-12-01",
@@ -101,7 +101,7 @@ export function PortfolioGrid({
       id: "6",
       title: "Prom Night Glamour",
       category: "special",
-      image: "/images/portfolio/prom1.jpg",
+      image: "https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600&h=600&fit=crop&crop=entropy",
       description: "Hollywood glamour waves with vintage-inspired styling for an unforgettable prom night look.",
       client: "Taylor S.",
       date: "2024-11-28",
@@ -112,7 +112,7 @@ export function PortfolioGrid({
       id: "7",
       title: "Pixie Cut Perfection",
       category: "cutting",
-      image: "/images/portfolio/pixie1.jpg",
+      image: "https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&h=600&fit=crop&crop=bottom",
       description: "Bold pixie cut with textured styling that enhances facial features and adds edgy sophistication.",
       client: "Rachel N.",
       date: "2024-11-25",
@@ -123,8 +123,8 @@ export function PortfolioGrid({
       id: "8",
       title: "Hair Extension Magic",
       category: "special",
-      image: "/images/portfolio/extensions1.jpg",
-      beforeImage: "/images/portfolio/extensions1-before.jpg",
+      image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=600&fit=crop&crop=bottom",
+      beforeImage: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&h=600&fit=crop&crop=bottom",
       description: "Seamless tape-in extensions for instant length and volume, perfectly blended for natural results.",
       client: "Nicole B.",
       date: "2024-11-20",
@@ -262,16 +262,12 @@ export function PortfolioGrid({
               )}
 
               {/* Image */}
-              <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 relative overflow-hidden">
-                {/* Placeholder for actual image */}
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-2">
-                      <Eye className="w-8 h-8 text-primary/50" />
-                    </div>
-                    <p className="text-primary/50 text-sm">{item.title}</p>
-                  </div>
-                </div>
+              <div className="aspect-square relative overflow-hidden">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">

@@ -30,7 +30,7 @@ export function InstagramCarousel() {
     {
       id: '1',
       type: 'video',
-      media_url: 'https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600&h=600&fit=crop',
+      media_url: '/images/IMG_1321.JPG',
       caption: '✨ Another stunning transformation! From dull to dazzling ✨ #HairTransformation #NycayenMagic',
       permalink: 'https://instagram.com/nycayenmoore',
       timestamp: new Date().toISOString(),
@@ -40,7 +40,7 @@ export function InstagramCarousel() {
     {
       id: '2',
       type: 'image',
-      media_url: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=600&fit=crop',
+      media_url: '/images/IMG_1322.JPG',
       caption: '💫 Loving this gorgeous balayage! Perfect for the fall season 🍂 #Balayage #HairGoals',
       permalink: 'https://instagram.com/nycayenmoore',
       timestamp: new Date().toISOString(),
@@ -50,7 +50,7 @@ export function InstagramCarousel() {
     {
       id: '3',
       type: 'carousel',
-      media_url: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&h=600&fit=crop',
+      media_url: '/images/IMG_1323.JPG',
       caption: '🔥 Before & After magic! Swipe to see the incredible transformation ➡️ #BeforeAndAfter #Confidence',
       permalink: 'https://instagram.com/nycayenmoore',
       timestamp: new Date().toISOString(),
@@ -60,7 +60,7 @@ export function InstagramCarousel() {
     {
       id: '4',
       type: 'video',
-      media_url: 'https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=600&h=600&fit=crop',
+      media_url: '/images/IMG_1324.JPG',
       caption: '🎥 Behind the scenes: Watch the technique that creates these stunning curls! #BehindTheScenes #HairTutorial',
       permalink: 'https://instagram.com/nycayenmoore',
       timestamp: new Date().toISOString(),
@@ -70,7 +70,7 @@ export function InstagramCarousel() {
     {
       id: '5',
       type: 'image',
-      media_url: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=600&fit=crop&crop=entropy',
+      media_url: '/images/IMG_1326.JPG',
       caption: '❤️ Client love! Nothing makes us happier than seeing our clients glow with confidence ✨ #ClientLove #Confidence',
       permalink: 'https://instagram.com/nycayenmoore',
       timestamp: new Date().toISOString(),

@@ -144,7 +144,7 @@ export function HeroSection() {
                   muted
                   loop
                   playsInline
-                  poster="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=400&h=700&fit=crop"
+                  poster="/images/enhanced-image-13.png"
                   className="w-full h-full object-cover"
                 >
                   <source src="/videos/hero.mp4" type="video/mp4" />

@@ -183,7 +183,7 @@ export default function AboutPage() {
               <motion.div variants={itemVariants} className="relative">
                 <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
                   <img
-                    src="https://images.unsplash.com/photo-1560869713-7d0a29430803?w=600&h=800&fit=crop&crop=top"
+                    src="/images/nycayen-portrait.JPG"
                     alt="Nycayen — Master Hair Stylist"
                     className="w-full h-full object-cover"
                   />

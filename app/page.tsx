@@ -4,7 +4,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { Testimonials } from "@/components/Testimonials";
 import { ServicesList } from "@/components/ServicesList";
 import { BookingWidget } from "@/components/BookingWidget";
-import { Sparkles, Star, Eye, Crown, Scissors, Heart, Award, Zap, Users, TrendingUp, CheckCircle } from "lucide-react";
+import { Sparkles, Star, Eye, Crown, Scissors, Heart, TrendingUp, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { NeoCard } from "@/components/ui/NeoCard";
 
@@ -143,7 +143,7 @@ export default function Home() {
               transition={{ delay: 0.2 }}
               className="text-xl text-neo-almond/90 leading-relaxed"
             >
-              Nycayen believe that great hair can transform your life. Our personalized hair styling services are designed to enhance your natural beauty and boost your confidence. Whether it's a chic cut or a glamorous updo, we ensure you leave our care feeling empowered and ready to take on the world.
+              Nycayen believe that great hair can transform your life. Our personalized hair styling services are designed to enhance your natural beauty and boost your confidence. Whether it&apos;s a chic cut or a glamorous updo, we ensure you leave our care feeling empowered and ready to take on the world.
             </motion.p>
           </div>
         </div>
@@ -160,7 +160,7 @@ export default function Home() {
               Discover our range of hair services for all occasions
             </p>
             <p className="text-lg text-neo-almond/80 max-w-3xl mx-auto leading-relaxed">
-              We offer a variety of hair services to cater to your individual needs. Our team of expert stylists specializes in professional hair styling and is committed to providing personalized service with exceptional attention to detail. Whether you're a groom-to-be, a bride-to-be, a celebrity, a trendsetter, or a model, we have the expertise and techniques to create the perfect look for you.
+              We offer a variety of hair services to cater to your individual needs. Our team of expert stylists specializes in professional hair styling and is committed to providing personalized service with exceptional attention to detail. Whether you&apos;re a groom-to-be, a bride-to-be, a celebrity, a trendsetter, or a model, we have the expertise and techniques to create the perfect look for you.
             </p>
           </div>
           <ServicesList />
@@ -269,7 +269,7 @@ export default function Home() {
                 Frequently Asked Questions About Our Services
               </h2>
               <p className="text-xl text-neo-almond/90 max-w-2xl mx-auto">
-                Find answers to common questions about Nycayen Moore's expert hair styling services
+                Find answers to common questions about Nycayen Moore&apos;s expert hair styling services
               </p>
             </div>
 
@@ -311,7 +311,7 @@ export default function Home() {
               Schedule Your Appointment Today
             </h2>
             <p className="text-xl text-neo-almond/90 max-w-2xl mx-auto mb-12">
-              Ready to transform your hair and experience the difference? Fill out the form below to schedule your appointment and take the first step towards your new look. We can't wait to meet you!
+              Ready to transform your hair and experience the difference? Fill out the form below to schedule your appointment and take the first step towards your new look. We can&apos;t wait to meet you!
             </p>
             <BookingWidget />
           </div>
